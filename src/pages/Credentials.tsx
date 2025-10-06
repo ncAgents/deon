@@ -18,24 +18,15 @@ const Credentials: React.FC = () => {
   const certificates = [
     {
       id: 1,
-      name: 'Certificate 1',
-      issuer: 'Issuing Organization',
-      image: '/certs/cert.jpg',
-      description: 'Description of the certificate and what it represents'
+      image: '/certs/cert.jpg'
     },
     {
       id: 2,
-      name: 'Udemy Course 1',
-      issuer: 'Udemy',
-      image: '/certs/udemy1.jpg',
-      description: 'Professional development course completion certificate'
+      image: '/certs/udemy1.jpg'
     },
     {
       id: 3,
-      name: 'Udemy Course 2',
-      issuer: 'Udemy',
-      image: '/certs/udemy2.jpg',
-      description: 'Advanced skills certification from Udemy platform'
+      image: '/certs/udemy2.jpg'
     }
   ];
 
@@ -221,37 +212,35 @@ const Credentials: React.FC = () => {
 
         {/* Certificates Section */}
         <div className="mb-12">
-          <h2 className="text-3xl font-bold text-primary text-center mb-8">Certificates & Achievements</h2>
+          <h2 className="text-3xl font-bold text-primary text-center mb-12">Certificates & Achievements</h2>
           
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {certificates.map((cert) => (
               <div
                 key={cert.id}
-                className="bg-white rounded-xl shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1 overflow-hidden border border-gray-100"
+                className="group bg-white rounded-2xl shadow-sm hover:shadow-xl transition-all duration-500 overflow-hidden border border-gray-100 hover:border-secondary/20"
               >
                 {/* Certificate Image */}
                 <div 
-                  className="h-48 bg-gray-100 cursor-pointer"
+                  className="relative h-80 bg-gradient-to-br from-gray-50 to-gray-100 cursor-pointer overflow-hidden"
                   onClick={() => openLightbox(cert.image)}
                 >
                   <img
                     src={cert.image}
-                    alt={cert.name}
-                    className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                    alt="Certificate"
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                   />
-                </div>
-                
-                {/* Certificate Info */}
-                <div className="p-4">
-                  <h3 className="text-lg font-bold text-primary mb-2">
-                    {cert.name}
-                  </h3>
-                  <p className="text-secondary font-medium text-sm mb-2">
-                    {cert.issuer}
-                  </p>
-                  <p className="text-gray-600 text-sm leading-relaxed">
-                    {cert.description}
-                  </p>
+                  
+                  {/* Hover Overlay */}
+                  <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-all duration-300 flex items-center justify-center">
+                    <div className="opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                      <div className="bg-white/90 backdrop-blur-sm rounded-full p-3">
+                        <svg className="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7" />
+                        </svg>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
             ))}
