@@ -9,6 +9,7 @@ const Hero: React.FC = () => {
           <img
             src="/deon.jpg"
             alt="Deon Chinese"
+            loading="lazy"
             className="w-32 h-32 md:w-40 md:h-40 rounded-full object-cover border-4 border-secondary shadow-lg"
           />
         </div>

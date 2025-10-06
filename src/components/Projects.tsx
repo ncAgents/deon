@@ -16,7 +16,7 @@ const Projects: React.FC = () => {
       id: 2,
       title: 'EgerEats',
       description: 'A complete end-to-end food delivery application with restaurant management, order tracking, and payment processing capabilities.',
-      image: 'https://images.unsplash.com/photo-1565299624946-b28f40a0ca4b?w=400&h=250&fit=crop&crop=center',
+      image: '/eats.png',
       githubLink: 'https://github.com/deonchinese/egereats',
       demoLink: 'https://app.egereats.software/',
       technologies: ['React', 'Node.js', 'MongoDB', 'Stripe'],
@@ -27,7 +27,7 @@ const Projects: React.FC = () => {
       title: 'Stellar Crowdfunding',
       description: 'A decentralized crowdfunding platform built on Stellar blockchain using Soroban smart contracts for secure and transparent fundraising.',
       image: 'https://images.unsplash.com/photo-1639762681485-074b7f938ba0?w=400&h=250&fit=crop&crop=center',
-      githubLink: 'https://github.com/deonchinese/stellar-crowdfunding',
+      githubLink: 'https://github.com/NBW-Hackathon/DeonStellar',
       demoLink: 'https://stellar-crowdfunding.vercel.app',
       technologies: ['Stellar', 'Soroban', 'Smart Contracts', 'Rust', 'Blockchain'],
       category: 'Blockchain'
@@ -57,6 +57,7 @@ const Projects: React.FC = () => {
                 <img
                   src={project.image}
                   alt={project.title}
+                  loading="lazy"
                   className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
                 />
               </div>

@@ -248,6 +248,7 @@ const Credentials: React.FC = () => {
                   <img
                     src={cert.image}
                     alt="Certificate"
+                    loading="lazy"
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                   />
                   
@@ -299,6 +300,7 @@ const Credentials: React.FC = () => {
             <img
               src={selectedImage}
               alt="Certificate"
+              loading="lazy"
               className="max-w-full max-h-full object-contain rounded-lg"
               onClick={(e) => e.stopPropagation()}
             />
