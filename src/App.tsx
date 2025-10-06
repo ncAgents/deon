@@ -6,6 +6,7 @@ import Credentials from './pages/Credentials';
 import Skills from './pages/Skills';
 import Playground from './pages/Playground';
 import NotFound from './pages/NotFound';
+import PrivateRepo from './pages/PrivateRepo';
 
 const App: React.FC = () => {
   return (
@@ -17,6 +18,7 @@ const App: React.FC = () => {
         <Route path="/skills" element={<Skills />} />
         <Route path="/playground" element={<Playground />} />
         <Route path="/coming-soon" element={<NotFound />} />
+        <Route path="/private-repo" element={<PrivateRepo />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
     </Router>

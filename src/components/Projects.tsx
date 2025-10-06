@@ -7,7 +7,7 @@ const Projects: React.FC = () => {
       title: 'Ardena',
       description: 'An AI platform that helps people create AI agents without writing any single code. Build intelligent assistants and automate workflows with a user-friendly interface.',
       image: '/ardena.png',
-      githubLink: 'https://github.com/deonchinese/ardena',
+      githubLink: '/private-repo',
       demoLink: 'https://ardena.xyz',
       technologies: ['AI/ML', 'Python', 'React', 'FastAPI'],
       category: 'AI/ML'
@@ -17,7 +17,7 @@ const Projects: React.FC = () => {
       title: 'EgerEats',
       description: 'A complete end-to-end food delivery application with restaurant management, order tracking, and payment processing capabilities.',
       image: '/eats.png',
-      githubLink: 'https://github.com/deonchinese/egereats',
+      githubLink: '/private-repo',
       demoLink: 'https://app.egereats.software/',
       technologies: ['React', 'Node.js', 'MongoDB', 'Stripe'],
       category: 'Web Development'
