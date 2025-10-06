@@ -141,11 +141,11 @@ const Credentials: React.FC = () => {
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         {/* Page Header */}
         <div className="text-center mb-12">
-          <h1 className="text-4xl md:text-5xl font-bold text-primary mb-6">
+          <h1 className="text-4xl md:text-5xl font-light text-primary mb-6 tracking-wide">
             Credentials
           </h1>
           <div className="w-20 h-1 bg-gradient-to-r from-secondary to-hover mx-auto mb-8"></div>
-          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+          <p className="text-lg text-gray-600 max-w-2xl mx-auto font-light">
             Professional certifications, courses, and achievements that showcase my expertise
           </p>
         </div>
@@ -158,7 +158,7 @@ const Credentials: React.FC = () => {
                 <path fillRule="evenodd" d="M4 4a2 2 0 012-2h4.586A2 2 0 0112 2.586L15.414 6A2 2 0 0116 7.414V16a2 2 0 01-2 2H6a2 2 0 01-2-2V4zm2 6a1 1 0 011-1h6a1 1 0 110 2H7a1 1 0 01-1-1zm1 3a1 1 0 100 2h6a1 1 0 100-2H7z" clipRule="evenodd" />
               </svg>
             </div>
-            <h2 className="text-2xl font-bold text-primary mb-4">Resume</h2>
+            <h2 className="text-2xl font-light text-primary mb-4 tracking-wide">Resume</h2>
             <p className="text-gray-600 mb-6">
               Download my comprehensive resume to learn more about my experience, skills, and achievements
             </p>
@@ -212,7 +212,7 @@ const Credentials: React.FC = () => {
 
         {/* Certificates Section */}
         <div className="mb-12">
-          <h2 className="text-3xl font-bold text-primary text-center mb-12">Certificates & Achievements</h2>
+          <h2 className="text-3xl font-light text-primary text-center mb-12 tracking-wide">Certificates & Achievements</h2>
           
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {certificates.map((cert) => (

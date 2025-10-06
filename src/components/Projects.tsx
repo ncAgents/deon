@@ -39,7 +39,7 @@ const Projects: React.FC = () => {
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
           {/* Section Title */}
-          <h2 className="text-4xl md:text-5xl font-bold text-primary mb-6">
+          <h2 className="text-4xl md:text-5xl font-light text-primary mb-6 tracking-wide">
             Featured Projects
           </h2>
           <div className="w-20 h-1 bg-gradient-to-r from-secondary to-hover mx-auto"></div>

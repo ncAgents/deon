@@ -161,11 +161,11 @@ const AllProjects: React.FC = () => {
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         {/* Page Header */}
         <div className="text-center mb-12">
-          <h1 className="text-4xl md:text-5xl font-bold text-primary mb-6">
+          <h1 className="text-4xl md:text-5xl font-light text-primary mb-6 tracking-wide">
             All Projects
           </h1>
           <div className="w-20 h-1 bg-gradient-to-r from-secondary to-hover mx-auto mb-8"></div>
-          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+          <p className="text-lg text-gray-600 max-w-2xl mx-auto font-light">
             A comprehensive showcase of my work in AI, blockchain, and data science
           </p>
         </div>

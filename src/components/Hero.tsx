@@ -13,11 +13,11 @@ const Hero: React.FC = () => {
           />
         </div>
         
-        <h1 className="text-4xl md:text-6xl font-bold text-primary mb-6">
+        <h1 className="text-4xl md:text-6xl font-light text-primary mb-6 tracking-wide">
           Hi, I'm <span className="text-secondary">Deon Chinese</span>.
         </h1>
         
-        <p className="text-xl md:text-2xl text-primary mb-8 max-w-3xl mx-auto leading-relaxed">
+        <p className="text-xl md:text-2xl text-primary mb-8 max-w-3xl mx-auto leading-relaxed font-light">
           I build intelligent systems and design seamless user experiences.
         </p>
         

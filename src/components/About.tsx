@@ -46,13 +46,13 @@ const About: React.FC = () => {
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           {/* Section Title */}
-          <h2 className="text-4xl md:text-5xl font-bold text-primary mb-6">
+          <h2 className="text-4xl md:text-5xl font-light text-primary mb-6 tracking-wide">
             About Me
           </h2>
           <div className="w-20 h-1 bg-gradient-to-r from-secondary to-hover mx-auto mb-8"></div>
           
           {/* Description */}
-          <p className="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed font-light">
           I build intelligent systems and intuitive UIs, blending AI, reinforcement learning, and blockchain into elegant, functional products.
           </p>
         </div>
