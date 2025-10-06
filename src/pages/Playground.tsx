@@ -138,14 +138,14 @@ const Playground: React.FC = () => {
       </div>
 
       {/* Main Content */}
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+      <div className="h-[calc(100vh-64px)] flex flex-col">
         {/* Simple Greeting */}
-        <div className="text-center mb-8">
+        <div className="text-center py-6 bg-white border-b border-gray-200">
           <p className="text-xl text-primary font-light">Hello, let's chat about Deon 🤗</p>
         </div>
 
         {/* Chat Interface */}
-        <div className="bg-white rounded-2xl shadow-lg overflow-hidden h-[600px] flex flex-col">
+        <div className="flex-1 bg-white flex flex-col">
 
           {/* Messages */}
           <div className="flex-1 overflow-y-auto p-6 space-y-4">
@@ -165,7 +165,7 @@ const Playground: React.FC = () => {
                 <div
                   className={`max-w-xs lg:max-w-md px-4 py-3 rounded-2xl ${
                     message.isUser
-                      ? 'bg-secondary text-white rounded-br-md'
+                      ? 'bg-gray-800 text-white rounded-br-md'
                       : 'bg-gray-100 text-gray-800 rounded-bl-md'
                   }`}
                 >
