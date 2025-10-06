@@ -3,6 +3,15 @@ import { Link } from 'react-router-dom';
 
 const Credentials: React.FC = () => {
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
+  const toggleMobileMenu = () => {
+    setIsMobileMenuOpen(!isMobileMenuOpen);
+  };
+
+  const closeMobileMenu = () => {
+    setIsMobileMenuOpen(false);
+  };
 
   const certificates = [
     {
@@ -67,14 +76,50 @@ const Credentials: React.FC = () => {
             <div className="md:hidden">
               <button
                 type="button"
+                onClick={toggleMobileMenu}
                 className="text-primary hover:text-secondary focus:outline-none focus:text-secondary"
               >
-                <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
-                </svg>
+                {isMobileMenuOpen ? (
+                  <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                  </svg>
+                ) : (
+                  <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+                  </svg>
+                )}
               </button>
             </div>
           </div>
+
+          {/* Mobile menu */}
+          {isMobileMenuOpen && (
+            <div className="md:hidden">
+              <div className="px-2 pt-2 pb-3 space-y-1 bg-white border-t border-gray-200">
+                <Link
+                  to="/"
+                  onClick={closeMobileMenu}
+                  className="block text-primary hover:text-secondary transition-colors duration-200 px-3 py-2 text-base font-medium"
+                >
+                  Home
+                </Link>
+                <Link
+                  to="/projects"
+                  onClick={closeMobileMenu}
+                  className="block text-primary hover:text-secondary transition-colors duration-200 px-3 py-2 text-base font-medium"
+                >
+                  Projects
+                </Link>
+                <Link
+                  to="/credentials"
+                  onClick={closeMobileMenu}
+                  className="block text-secondary font-medium px-3 py-2 text-base"
+                >
+                  Credentials
+                </Link>
+              </div>
+            </div>
+          )}
         </div>
       </div>
 
