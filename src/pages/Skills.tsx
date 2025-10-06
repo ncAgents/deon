@@ -276,10 +276,219 @@ const Skills: React.FC = () => {
               }
             };
 
+            const getAccentColor = (style: string) => {
+              switch (style) {
+                case 'gradient-blue':
+                  return 'bg-blue-500';
+                case 'gradient-green':
+                  return 'bg-green-500';
+                case 'gradient-purple':
+                  return 'bg-purple-500';
+                case 'gradient-orange':
+                  return 'bg-orange-500';
+                case 'gradient-pink':
+                  return 'bg-pink-500';
+                case 'gradient-cyan':
+                  return 'bg-cyan-500';
+                case 'gradient-indigo':
+                  return 'bg-indigo-500';
+                case 'gradient-gray':
+                  return 'bg-gray-500';
+                default:
+                  return 'bg-secondary';
+              }
+            };
+
+            // Different layouts for different sections
+            const renderSkills = () => {
+              switch (index) {
+                case 0: // Core Languages - Grid Layout
+                  return (
+                    <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
+                      {category.skills.map((skill, skillIndex) => (
+                        <div
+                          key={skillIndex}
+                          className="bg-white/80 backdrop-blur-sm rounded-xl p-4 hover:bg-white/95 transition-all duration-300 border border-white/50 hover:shadow-lg text-center"
+                        >
+                          <h3 className="text-sm font-semibold text-primary mb-2">
+                            {skill.name}
+                          </h3>
+                          <p className="text-xs text-gray-600 leading-relaxed">
+                            {skill.description}
+                          </p>
+                        </div>
+                      ))}
+                    </div>
+                  );
+
+                case 1: // Data Science - Timeline with Circles
+                  return (
+                    <div className="relative">
+                      <div className="absolute left-4 top-0 bottom-0 w-0.5 bg-gray-300"></div>
+                      <div className="space-y-6">
+                        {category.skills.map((skill, skillIndex) => (
+                          <div key={skillIndex} className="relative flex items-start space-x-4">
+                            <div className={`w-8 h-8 ${getAccentColor(category.style)} rounded-full flex items-center justify-center flex-shrink-0 relative z-10`}>
+                              <div className="w-3 h-3 bg-white rounded-full"></div>
+                            </div>
+                            <div className="bg-white/80 backdrop-blur-sm rounded-xl p-4 hover:bg-white/95 transition-all duration-300 border border-white/50 hover:shadow-lg flex-1">
+                              <h3 className="text-lg font-semibold text-primary mb-2">
+                                {skill.name}
+                              </h3>
+                              <p className="text-sm text-gray-600 leading-relaxed">
+                                {skill.description}
+                              </p>
+                            </div>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  );
+
+                case 2: // Machine Learning - Hexagonal Cards
+                  return (
+                    <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+                      {category.skills.map((skill, skillIndex) => (
+                        <div
+                          key={skillIndex}
+                          className="bg-white/80 backdrop-blur-sm rounded-2xl p-4 hover:bg-white/95 transition-all duration-300 border border-white/50 hover:shadow-lg transform hover:rotate-1"
+                        >
+                          <h3 className="text-sm font-semibold text-primary mb-2">
+                            {skill.name}
+                          </h3>
+                          <p className="text-xs text-gray-600 leading-relaxed">
+                            {skill.description}
+                          </p>
+                        </div>
+                      ))}
+                    </div>
+                  );
+
+                case 3: // Reinforcement Learning - Vertical List with Icons
+                  return (
+                    <div className="space-y-3">
+                      {category.skills.map((skill, skillIndex) => (
+                        <div
+                          key={skillIndex}
+                          className="bg-white/80 backdrop-blur-sm rounded-xl p-4 hover:bg-white/95 transition-all duration-300 border border-white/50 hover:shadow-lg flex items-center space-x-4"
+                        >
+                          <div className={`w-6 h-6 ${getAccentColor(category.style)} rounded-full flex items-center justify-center flex-shrink-0`}>
+                            <div className="w-2 h-2 bg-white rounded-full"></div>
+                          </div>
+                          <div className="flex-1">
+                            <h3 className="text-lg font-semibold text-primary">
+                              {skill.name}
+                            </h3>
+                            <p className="text-sm text-gray-600">
+                              {skill.description}
+                            </p>
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                  );
+
+                case 4: // AI/LLM - Horizontal Scrolling Cards
+                  return (
+                    <div className="flex space-x-4 overflow-x-auto pb-4">
+                      {category.skills.map((skill, skillIndex) => (
+                        <div
+                          key={skillIndex}
+                          className="bg-white/80 backdrop-blur-sm rounded-xl p-4 hover:bg-white/95 transition-all duration-300 border border-white/50 hover:shadow-lg flex-shrink-0 w-64"
+                        >
+                          <h3 className="text-lg font-semibold text-primary mb-2">
+                            {skill.name}
+                          </h3>
+                          <p className="text-sm text-gray-600 leading-relaxed">
+                            {skill.description}
+                          </p>
+                        </div>
+                      ))}
+                    </div>
+                  );
+
+                case 5: // Blockchain - Tag Cloud Style
+                  return (
+                    <div className="flex flex-wrap gap-3">
+                      {category.skills.map((skill, skillIndex) => (
+                        <div
+                          key={skillIndex}
+                          className="bg-white/80 backdrop-blur-sm rounded-full px-6 py-3 hover:bg-white/95 transition-all duration-300 border border-white/50 hover:shadow-lg"
+                        >
+                          <h3 className="text-sm font-semibold text-primary mb-1">
+                            {skill.name}
+                          </h3>
+                          <p className="text-xs text-gray-600">
+                            {skill.description}
+                          </p>
+                        </div>
+                      ))}
+                    </div>
+                  );
+
+                case 6: // Data Engineering - Compact Grid
+                  return (
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                      {category.skills.map((skill, skillIndex) => (
+                        <div
+                          key={skillIndex}
+                          className="bg-white/80 backdrop-blur-sm rounded-xl p-4 hover:bg-white/95 transition-all duration-300 border border-white/50 hover:shadow-lg"
+                        >
+                          <h3 className="text-lg font-semibold text-primary mb-2">
+                            {skill.name}
+                          </h3>
+                          <p className="text-sm text-gray-600 leading-relaxed">
+                            {skill.description}
+                          </p>
+                        </div>
+                      ))}
+                    </div>
+                  );
+
+                case 7: // Tools & Platforms - Simple List
+                  return (
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                      {category.skills.map((skill, skillIndex) => (
+                        <div
+                          key={skillIndex}
+                          className="bg-white/80 backdrop-blur-sm rounded-xl p-4 hover:bg-white/95 transition-all duration-300 border border-white/50 hover:shadow-lg"
+                        >
+                          <h3 className="text-lg font-semibold text-primary mb-2">
+                            {skill.name}
+                          </h3>
+                          <p className="text-sm text-gray-600 leading-relaxed">
+                            {skill.description}
+                          </p>
+                        </div>
+                      ))}
+                    </div>
+                  );
+
+                default:
+                  return (
+                    <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
+                      {category.skills.map((skill, skillIndex) => (
+                        <div
+                          key={skillIndex}
+                          className="bg-white/80 backdrop-blur-sm rounded-xl p-4 hover:bg-white/95 transition-all duration-300 border border-white/50 hover:shadow-lg"
+                        >
+                          <h3 className="text-lg font-semibold text-primary mb-2">
+                            {skill.name}
+                          </h3>
+                          <p className="text-sm text-gray-600 leading-relaxed">
+                            {skill.description}
+                          </p>
+                        </div>
+                      ))}
+                    </div>
+                  );
+              }
+            };
+
             return (
               <div
                 key={category.id}
-                className={`bg-gradient-to-br ${getGradientClasses(category.style)} rounded-3xl p-8 border transition-all duration-500 hover:shadow-xl hover:scale-[1.02]`}
+                className={`bg-gradient-to-br ${getGradientClasses(category.style)} rounded-2xl p-8 border transition-all duration-500 hover:shadow-xl`}
               >
                 {/* Category Header */}
                 <div className="mb-8">
@@ -291,24 +500,8 @@ const Skills: React.FC = () => {
                   </p>
                 </div>
 
-                {/* Skills List - Simplified */}
-                <div className="space-y-4">
-                  {category.skills.map((skill, skillIndex) => (
-                    <div
-                      key={skillIndex}
-                      className="bg-white/70 backdrop-blur-sm rounded-xl p-6 hover:bg-white/90 transition-all duration-300 border border-white/50 hover:shadow-lg"
-                    >
-                      <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
-                        <h3 className="text-xl font-semibold text-primary">
-                          {skill.name}
-                        </h3>
-                        <p className="text-gray-600 leading-relaxed">
-                          {skill.description}
-                        </p>
-                      </div>
-                    </div>
-                  ))}
-                </div>
+                {/* Skills with Different Layouts */}
+                {renderSkills()}
               </div>
             );
           })}
