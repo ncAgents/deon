@@ -21,8 +21,9 @@ const Skills: React.FC = () => {
       skills: [
         { name: 'Python', description: 'Data science, AI, ML, and blockchain scripting' },
         { name: 'Rust', description: 'Blockchain backend & performance-critical systems' },
+        { name: 'R', description: 'Statistical computing and data analysis' },
+        { name: 'JS/TS', description: 'AI web integrations and frontend' },
         { name: 'SQL', description: 'Data querying and optimization' },
-        { name: 'JavaScript/TypeScript', description: 'AI web integrations' },
         { name: 'C++', description: 'Reinforcement learning environments, performance tuning' }
       ]
     },
@@ -304,7 +305,7 @@ const Skills: React.FC = () => {
               switch (index) {
                 case 0: // Core Languages - Grid Layout
                   return (
-                    <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
+                    <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
                       {category.skills.map((skill, skillIndex) => (
                         <div
                           key={skillIndex}
@@ -347,7 +348,7 @@ const Skills: React.FC = () => {
 
                 case 2: // Machine Learning - Hexagonal Cards
                   return (
-                    <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+                    <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
                       {category.skills.map((skill, skillIndex) => (
                         <div
                           key={skillIndex}
@@ -388,18 +389,18 @@ const Skills: React.FC = () => {
                     </div>
                   );
 
-                case 4: // AI/LLM - Horizontal Scrolling Cards
+                case 4: // AI/LLM - Masonry Style Grid
                   return (
-                    <div className="flex space-x-4 overflow-x-auto pb-4">
+                    <div className="columns-1 md:columns-2 gap-4 space-y-4">
                       {category.skills.map((skill, skillIndex) => (
                         <div
                           key={skillIndex}
-                          className="bg-white/80 backdrop-blur-sm rounded-xl p-4 hover:bg-white/95 transition-all duration-300 border border-white/50 hover:shadow-lg flex-shrink-0 w-64"
+                          className="bg-white/80 backdrop-blur-sm rounded-xl p-4 hover:bg-white/95 transition-all duration-300 border border-white/50 hover:shadow-lg break-inside-avoid mb-4"
                         >
-                          <h3 className="text-lg font-semibold text-primary mb-2">
+                          <h3 className="text-sm font-semibold text-primary mb-2">
                             {skill.name}
                           </h3>
-                          <p className="text-sm text-gray-600 leading-relaxed">
+                          <p className="text-xs text-gray-600 leading-relaxed">
                             {skill.description}
                           </p>
                         </div>
@@ -434,10 +435,10 @@ const Skills: React.FC = () => {
                           key={skillIndex}
                           className="bg-white/80 backdrop-blur-sm rounded-xl p-4 hover:bg-white/95 transition-all duration-300 border border-white/50 hover:shadow-lg"
                         >
-                          <h3 className="text-lg font-semibold text-primary mb-2">
+                          <h3 className="text-sm font-semibold text-primary mb-2">
                             {skill.name}
                           </h3>
-                          <p className="text-sm text-gray-600 leading-relaxed">
+                          <p className="text-xs text-gray-600 leading-relaxed">
                             {skill.description}
                           </p>
                         </div>
@@ -447,16 +448,16 @@ const Skills: React.FC = () => {
 
                 case 7: // Tools & Platforms - Simple List
                   return (
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                       {category.skills.map((skill, skillIndex) => (
                         <div
                           key={skillIndex}
                           className="bg-white/80 backdrop-blur-sm rounded-xl p-4 hover:bg-white/95 transition-all duration-300 border border-white/50 hover:shadow-lg"
                         >
-                          <h3 className="text-lg font-semibold text-primary mb-2">
+                          <h3 className="text-sm font-semibold text-primary mb-2">
                             {skill.name}
                           </h3>
-                          <p className="text-sm text-gray-600 leading-relaxed">
+                          <p className="text-xs text-gray-600 leading-relaxed">
                             {skill.description}
                           </p>
                         </div>
@@ -472,10 +473,10 @@ const Skills: React.FC = () => {
                           key={skillIndex}
                           className="bg-white/80 backdrop-blur-sm rounded-xl p-4 hover:bg-white/95 transition-all duration-300 border border-white/50 hover:shadow-lg"
                         >
-                          <h3 className="text-lg font-semibold text-primary mb-2">
+                          <h3 className="text-sm font-semibold text-primary mb-2">
                             {skill.name}
                           </h3>
-                          <p className="text-sm text-gray-600 leading-relaxed">
+                          <p className="text-xs text-gray-600 leading-relaxed">
                             {skill.description}
                           </p>
                         </div>
