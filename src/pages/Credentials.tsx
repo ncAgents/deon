@@ -4,6 +4,8 @@ import { Link } from 'react-router-dom';
 const Credentials: React.FC = () => {
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isDownloading, setIsDownloading] = useState(false);
+  const [downloadSuccess, setDownloadSuccess] = useState(false);
 
   const toggleMobileMenu = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
@@ -45,13 +47,34 @@ const Credentials: React.FC = () => {
     setSelectedImage(null);
   };
 
-  const downloadResume = () => {
-    const link = document.createElement('a');
-    link.href = '/certs/resume.pdf';
-    link.download = 'Deon-Chinese-Resume.pdf';
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
+  const downloadResume = async () => {
+    setIsDownloading(true);
+    setDownloadSuccess(false);
+    
+    try {
+      // Simulate download progress
+      await new Promise(resolve => setTimeout(resolve, 1500));
+      
+      const link = document.createElement('a');
+      link.href = '/certs/resume.pdf';
+      link.download = 'Deon-Chinese-Resume.pdf';
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+      
+      // Show success message
+      setDownloadSuccess(true);
+      
+      // Hide success message after 3 seconds
+      setTimeout(() => {
+        setDownloadSuccess(false);
+      }, 3000);
+      
+    } catch (error) {
+      console.error('Download failed:', error);
+    } finally {
+      setIsDownloading(false);
+    }
   };
 
   return (
@@ -150,13 +173,49 @@ const Credentials: React.FC = () => {
             </p>
             <button
               onClick={downloadResume}
-              className="inline-flex items-center bg-secondary hover:bg-hover text-white font-semibold py-3 px-8 rounded-lg transition-colors duration-200 transform hover:scale-105"
+              disabled={isDownloading}
+              className={`inline-flex items-center font-semibold py-3 px-8 rounded-lg transition-all duration-200 transform ${
+                isDownloading 
+                  ? 'bg-gray-400 cursor-not-allowed' 
+                  : downloadSuccess
+                    ? 'bg-green-500 hover:bg-green-600'
+                    : 'bg-secondary hover:bg-hover hover:scale-105'
+              } text-white`}
             >
-              <svg className="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20">
-                <path fillRule="evenodd" d="M3 17a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm3.293-7.707a1 1 0 011.414 0L9 10.586V3a1 1 0 112 0v7.586l1.293-1.293a1 1 0 111.414 1.414l-3 3a1 1 0 01-1.414 0l-3-3a1 1 0 010-1.414z" clipRule="evenodd" />
-              </svg>
-              Download Resume
+              {isDownloading ? (
+                <>
+                  <svg className="animate-spin w-5 h-5 mr-2" fill="none" viewBox="0 0 24 24">
+                    <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+                    <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                  </svg>
+                  Downloading...
+                </>
+              ) : downloadSuccess ? (
+                <>
+                  <svg className="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                    <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                  </svg>
+                  Downloaded!
+                </>
+              ) : (
+                <>
+                  <svg className="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                    <path fillRule="evenodd" d="M3 17a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm3.293-7.707a1 1 0 011.414 0L9 10.586V3a1 1 0 112 0v7.586l1.293-1.293a1 1 0 111.414 1.414l-3 3a1 1 0 01-1.414 0l-3-3a1 1 0 010-1.414z" clipRule="evenodd" />
+                  </svg>
+                  Download Resume
+                </>
+              )}
             </button>
+            
+            {/* Success Message */}
+            {downloadSuccess && (
+              <div className="mt-4 p-3 bg-green-100 border border-green-400 text-green-700 rounded-lg flex items-center justify-center">
+                <svg className="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                  <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                </svg>
+                Resume downloaded successfully!
+              </div>
+            )}
           </div>
         </div>
 
