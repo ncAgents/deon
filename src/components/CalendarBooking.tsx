@@ -44,7 +44,7 @@ const CalendarBooking: React.FC<CalendarBookingProps> = ({ isOpen, onClose }) =>
   ];
 
   const handleBookMeeting = (meetingType: string) => {
-    const calendlyUrls = {
+    const calendlyUrls: { [key: string]: string } = {
       consultation: 'https://calendly.com/625deon/ai-ml-consultation',
       collaboration: 'https://calendly.com/625deon/project-collaboration',
       mentorship: 'https://calendly.com/625deon/career-mentorship',
