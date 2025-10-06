@@ -5,6 +5,7 @@ import AllProjects from './pages/AllProjects';
 import Credentials from './pages/Credentials';
 import Skills from './pages/Skills';
 import Playground from './pages/Playground';
+import NotFound from './pages/NotFound';
 
 const App: React.FC = () => {
   return (
@@ -15,6 +16,8 @@ const App: React.FC = () => {
         <Route path="/credentials" element={<Credentials />} />
         <Route path="/skills" element={<Skills />} />
         <Route path="/playground" element={<Playground />} />
+        <Route path="/coming-soon" element={<NotFound />} />
+        <Route path="*" element={<NotFound />} />
       </Routes>
     </Router>
   );

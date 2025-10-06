@@ -28,7 +28,7 @@ const Projects: React.FC = () => {
       description: 'A decentralized crowdfunding platform built on Stellar blockchain using Soroban smart contracts for secure and transparent fundraising.',
       image: 'https://images.unsplash.com/photo-1639762681485-074b7f938ba0?w=400&h=250&fit=crop&crop=center',
       githubLink: 'https://github.com/NBW-Hackathon/DeonStellar',
-      demoLink: 'https://stellar-crowdfunding.vercel.app',
+      demoLink: '/coming-soon',
       technologies: ['Stellar', 'Soroban', 'Smart Contracts', 'Rust', 'Blockchain'],
       category: 'Blockchain'
     }

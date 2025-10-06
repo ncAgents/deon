@@ -42,7 +42,7 @@ const AllProjects: React.FC = () => {
       description: 'A decentralized crowdfunding platform built on Stellar blockchain using Soroban smart contracts for secure and transparent fundraising.',
       image: 'https://images.unsplash.com/photo-1639762681485-074b7f938ba0?w=400&h=250&fit=crop&crop=center',
       githubLink: 'https://github.com/NBW-Hackathon/DeonStellar',
-      demoLink: 'https://stellar-crowdfunding.vercel.app',
+      demoLink: '/coming-soon',
       technologies: ['Stellar', 'Soroban', 'Smart Contracts', 'Rust', 'Blockchain'],
       category: 'Blockchain',
       featured: true
@@ -53,7 +53,7 @@ const AllProjects: React.FC = () => {
       description: 'AI-powered simulation that models the autonomous landing of a spacecraft on the moon using reinforcement learning.',
       image: '/moon.png',
       githubLink: 'https://github.com/Deon62/Lunar-Moon-landing-Agent',
-      demoLink: 'https://moon-landing-demo.vercel.app',
+      demoLink: '/coming-soon',
       technologies: ['Python', 'PyTorch', 'OpenAI Gym', 'Reinforcement Learning'],
       category: 'AI/ML',
       featured: false
@@ -64,7 +64,7 @@ const AllProjects: React.FC = () => {
       description: 'Six Degrees of Separation is a graph-based algorithmic project that explores the theory that any two people are connected by six or fewer relationships. It demonstrates the power of graph theory in understanding human networks and the interconnectedness of modern social systems.',
       image: '/six.png',
       githubLink: 'https://github.com/Deon62/AI-6-Degrees-of-separation-movie_actors',
-      demoLink: 'https://six-degrees-demo.vercel.app',
+      demoLink: '/coming-soon',
       technologies: ['Gymnasium', 'Swig', 'PyTorch', 'GNNs'],
       category: 'AI/ML',
       featured: false
