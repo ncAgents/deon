@@ -1,5 +1,4 @@
 import React from 'react';
-import profilePic from '../assets/deon.jpg';
 
 const Hero: React.FC = () => {
   return (
@@ -8,7 +7,7 @@ const Hero: React.FC = () => {
         {/* Profile Picture */}
         <div className="mb-8 flex justify-center">
           <img
-            src={profilePic}
+            src="/deon.jpg"
             alt="Deon Chinese"
             className="w-32 h-32 md:w-40 md:h-40 rounded-full object-cover border-4 border-secondary shadow-lg"
           />

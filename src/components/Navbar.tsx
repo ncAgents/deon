@@ -25,7 +25,7 @@ const Navbar: React.FC = () => {
                 About
               </a>
               <a
-                href="#projects"
+                href="/projects"
                 className="text-primary hover:text-secondary transition-colors duration-200 px-3 py-2 text-sm font-medium"
               >
                 Projects
@@ -71,7 +71,7 @@ const Navbar: React.FC = () => {
                 About
               </a>
               <a
-                href="#projects"
+                href="/projects"
                 onClick={closeMobileMenu}
                 className="block text-primary hover:text-secondary transition-colors duration-200 px-3 py-2 text-base font-medium"
               >

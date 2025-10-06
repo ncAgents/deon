@@ -1,7 +1,10 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 
-const Projects: React.FC = () => {
-  const featuredProjects = [
+const AllProjects: React.FC = () => {
+  const [selectedCategory, setSelectedCategory] = useState('All');
+
+  const allProjects = [
     {
       id: 1,
       title: 'AI-Powered Trading Bot',
@@ -10,7 +13,8 @@ const Projects: React.FC = () => {
       githubLink: 'https://github.com/deonchinese/ai-trading-bot',
       demoLink: 'https://ai-trading-demo.vercel.app',
       technologies: ['Python', 'TensorFlow', 'Reinforcement Learning', 'APIs'],
-      category: 'AI/ML'
+      category: 'AI/ML',
+      featured: true
     },
     {
       id: 2,
@@ -20,7 +24,8 @@ const Projects: React.FC = () => {
       githubLink: 'https://github.com/deonchinese/blockchain-analytics',
       demoLink: 'https://blockchain-dashboard.netlify.app',
       technologies: ['React', 'Rust', 'Web3', 'D3.js'],
-      category: 'Blockchain'
+      category: 'Blockchain',
+      featured: true
     },
     {
       id: 3,
@@ -30,24 +35,104 @@ const Projects: React.FC = () => {
       githubLink: 'https://github.com/deonchinese/predictive-platform',
       demoLink: 'https://predictive-platform.herokuapp.com',
       technologies: ['Python', 'R', 'Scikit-learn', 'FastAPI'],
-      category: 'Data Science'
+      category: 'Data Science',
+      featured: true
+    },
+    {
+      id: 4,
+      title: 'Neural Network Image Classifier',
+      description: 'A deep learning model for image classification using convolutional neural networks with 95% accuracy on custom datasets.',
+      image: '/api/placeholder/400/250',
+      githubLink: 'https://github.com/deonchinese/image-classifier',
+      demoLink: 'https://image-classifier-demo.vercel.app',
+      technologies: ['Python', 'PyTorch', 'OpenCV', 'Flask'],
+      category: 'AI/ML',
+      featured: false
+    },
+    {
+      id: 5,
+      title: 'Smart Contract DeFi Protocol',
+      description: 'A decentralized finance protocol built on Ethereum with automated market making and yield farming capabilities.',
+      image: '/api/placeholder/400/250',
+      githubLink: 'https://github.com/deonchinese/defi-protocol',
+      demoLink: 'https://defi-protocol-demo.netlify.app',
+      technologies: ['Solidity', 'Web3.js', 'React', 'Hardhat'],
+      category: 'Blockchain',
+      featured: false
+    },
+    {
+      id: 6,
+      title: 'Real-time Data Pipeline',
+      description: 'A scalable data processing pipeline for real-time analytics with Apache Kafka and stream processing capabilities.',
+      image: '/api/placeholder/400/250',
+      githubLink: 'https://github.com/deonchinese/data-pipeline',
+      demoLink: 'https://data-pipeline-demo.herokuapp.com',
+      technologies: ['Python', 'Apache Kafka', 'Docker', 'PostgreSQL'],
+      category: 'Data Science',
+      featured: false
     }
   ];
 
+  const categories = ['All', 'AI/ML', 'Blockchain', 'Data Science'];
+
+  const filteredProjects = selectedCategory === 'All' 
+    ? allProjects 
+    : allProjects.filter(project => project.category === selectedCategory);
+
   return (
-    <section id="projects" className="bg-background py-20">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div className="min-h-screen bg-background">
+      {/* Header */}
+      <div className="bg-white shadow-sm">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex justify-between items-center h-16">
+            <Link to="/" className="text-xl font-semibold text-primary">
+              Deon Chinese
+            </Link>
+            <div className="flex space-x-8">
+              <Link to="/" className="text-primary hover:text-secondary transition-colors duration-200">
+                Home
+              </Link>
+              <Link to="/projects" className="text-secondary font-medium">
+                Projects
+              </Link>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Main Content */}
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        {/* Page Header */}
         <div className="text-center mb-12">
-          {/* Section Title */}
-          <h2 className="text-4xl md:text-5xl font-bold text-primary mb-6">
-            Featured Projects
-          </h2>
-          <div className="w-20 h-1 bg-gradient-to-r from-secondary to-hover mx-auto"></div>
+          <h1 className="text-4xl md:text-5xl font-bold text-primary mb-6">
+            All Projects
+          </h1>
+          <div className="w-20 h-1 bg-gradient-to-r from-secondary to-hover mx-auto mb-8"></div>
+          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+            A comprehensive showcase of my work in AI, blockchain, and data science
+          </p>
+        </div>
+
+        {/* Category Filter */}
+        <div className="flex flex-wrap justify-center gap-4 mb-12">
+          {categories.map((category) => (
+            <button
+              key={category}
+              onClick={() => setSelectedCategory(category)}
+              className={`px-6 py-2 rounded-full font-medium transition-colors duration-200 ${
+                selectedCategory === category
+                  ? 'bg-secondary text-white'
+                  : 'bg-white text-primary border border-gray-300 hover:border-secondary'
+              }`}
+            >
+              {category}
+            </button>
+          ))}
         </div>
 
         {/* Projects Grid */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
-          {featuredProjects.map((project) => (
+          {filteredProjects.map((project) => (
             <div
               key={project.id}
               className="bg-white rounded-xl shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1 overflow-hidden border border-gray-100"
@@ -67,6 +152,11 @@ const Projects: React.FC = () => {
                   <span className="inline-block bg-secondary text-white text-xs font-semibold px-2 py-1 rounded-full">
                     {project.category}
                   </span>
+                  {project.featured && (
+                    <span className="inline-block bg-yellow-100 text-yellow-800 text-xs font-semibold px-2 py-1 rounded-full ml-2">
+                      Featured
+                    </span>
+                  )}
                 </div>
                 
                 {/* Project Title */}
@@ -117,21 +207,21 @@ const Projects: React.FC = () => {
           ))}
         </div>
 
-        {/* View All Projects Button */}
+        {/* Back to Home */}
         <div className="text-center">
-          <a
-            href="/projects"
+          <Link
+            to="/"
             className="inline-flex items-center bg-white text-primary border-2 border-secondary hover:bg-secondary hover:text-white transition-all duration-200 font-semibold py-3 px-8 rounded-lg shadow-md hover:shadow-lg"
           >
-            View All Projects
-            <svg className="ml-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+            <svg className="mr-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 19l-7-7m0 0l7-7m-7 7h18" />
             </svg>
-          </a>
+            Back to Home
+          </Link>
         </div>
       </div>
-    </section>
+    </div>
   );
 };
 
-export default Projects;
+export default AllProjects;
