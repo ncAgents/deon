@@ -19,12 +19,6 @@ const Navbar: React.FC = () => {
           <div className="hidden md:block">
             <div className="flex items-baseline space-x-8">
               <a
-                href="#about"
-                className="text-primary hover:text-secondary transition-colors duration-200 px-3 py-2 text-sm font-medium"
-              >
-                About
-              </a>
-              <a
                 href="/projects"
                 className="text-primary hover:text-secondary transition-colors duration-200 px-3 py-2 text-sm font-medium"
               >
@@ -47,12 +41,6 @@ const Navbar: React.FC = () => {
                 className="text-primary hover:text-secondary transition-colors duration-200 px-3 py-2 text-sm font-medium"
               >
                 Playground
-              </a>
-              <a
-                href="#contact"
-                className="text-primary hover:text-secondary transition-colors duration-200 px-3 py-2 text-sm font-medium"
-              >
-                Contact
               </a>
             </div>
           </div>
@@ -82,13 +70,6 @@ const Navbar: React.FC = () => {
           <div className="md:hidden">
             <div className="px-2 pt-2 pb-3 space-y-1 bg-white border-t border-gray-200">
               <a
-                href="#about"
-                onClick={closeMobileMenu}
-                className="block text-primary hover:text-secondary transition-colors duration-200 px-3 py-2 text-base font-medium"
-              >
-                About
-              </a>
-              <a
                 href="/projects"
                 onClick={closeMobileMenu}
                 className="block text-primary hover:text-secondary transition-colors duration-200 px-3 py-2 text-base font-medium"
@@ -115,13 +96,6 @@ const Navbar: React.FC = () => {
                 className="block text-primary hover:text-secondary transition-colors duration-200 px-3 py-2 text-base font-medium"
               >
                 Playground
-              </a>
-              <a
-                href="#contact"
-                onClick={closeMobileMenu}
-                className="block text-primary hover:text-secondary transition-colors duration-200 px-3 py-2 text-base font-medium"
-              >
-                Contact
               </a>
             </div>
           </div>
