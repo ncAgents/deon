@@ -131,7 +131,7 @@ const AllProjects: React.FC = () => {
               ></div>
               
               {/* Menu panel */}
-              <div className="fixed top-0 right-0 h-full w-80 max-w-sm bg-white shadow-xl transform transition-transform duration-300 ease-in-out">
+              <div className="fixed top-0 right-0 h-full w-64 max-w-xs bg-white shadow-xl transform transition-transform duration-300 ease-in-out">
                 <div className="flex flex-col h-full">
                   {/* Header */}
                   <div className="flex items-center justify-between p-6 border-b border-gray-200">
