@@ -4,33 +4,33 @@ const Projects: React.FC = () => {
   const featuredProjects = [
     {
       id: 1,
-      title: 'AI-Powered Trading Bot',
-      description: 'An intelligent trading system using reinforcement learning to optimize cryptocurrency trading strategies with real-time market analysis.',
-      image: '/api/placeholder/400/250',
-      githubLink: 'https://github.com/deonchinese/ai-trading-bot',
-      demoLink: 'https://ai-trading-demo.vercel.app',
-      technologies: ['Python', 'TensorFlow', 'Reinforcement Learning', 'APIs'],
+      title: 'Ardena',
+      description: 'An AI platform that helps people create AI agents without writing any single code. Build intelligent assistants and automate workflows with a user-friendly interface.',
+      image: '/ardena.png',
+      githubLink: 'https://github.com/deonchinese/ardena',
+      demoLink: 'https://ardena.xyz',
+      technologies: ['AI/ML', 'Python', 'React', 'FastAPI'],
       category: 'AI/ML'
     },
     {
       id: 2,
-      title: 'Blockchain Analytics Dashboard',
-      description: 'A comprehensive dashboard for analyzing blockchain transactions, smart contract interactions, and DeFi protocol metrics.',
-      image: '/api/placeholder/400/250',
-      githubLink: 'https://github.com/deonchinese/blockchain-analytics',
-      demoLink: 'https://blockchain-dashboard.netlify.app',
-      technologies: ['React', 'Rust', 'Web3', 'D3.js'],
-      category: 'Blockchain'
+      title: 'EgerEats',
+      description: 'A complete end-to-end food delivery application with restaurant management, order tracking, and payment processing capabilities.',
+      image: 'https://images.unsplash.com/photo-1565299624946-b28f40a0ca4b?w=400&h=250&fit=crop&crop=center',
+      githubLink: 'https://github.com/deonchinese/egereats',
+      demoLink: 'https://app.egereats.software/',
+      technologies: ['React', 'Node.js', 'MongoDB', 'Stripe'],
+      category: 'Web Development'
     },
     {
       id: 3,
-      title: 'Predictive Data Science Platform',
-      description: 'A machine learning platform for predictive analytics with automated model selection and real-time data processing capabilities.',
-      image: '/api/placeholder/400/250',
-      githubLink: 'https://github.com/deonchinese/predictive-platform',
-      demoLink: 'https://predictive-platform.herokuapp.com',
-      technologies: ['Python', 'R', 'Scikit-learn', 'FastAPI'],
-      category: 'Data Science'
+      title: 'Stellar Crowdfunding',
+      description: 'A decentralized crowdfunding platform built on Stellar blockchain using Soroban smart contracts for secure and transparent fundraising.',
+      image: 'https://images.unsplash.com/photo-1639762681485-074b7f938ba0?w=400&h=250&fit=crop&crop=center',
+      githubLink: 'https://github.com/deonchinese/stellar-crowdfunding',
+      demoLink: 'https://stellar-crowdfunding.vercel.app',
+      technologies: ['Stellar', 'Soroban', 'Smart Contracts', 'Rust', 'Blockchain'],
+      category: 'Blockchain'
     }
   ];
 
@@ -53,11 +53,12 @@ const Projects: React.FC = () => {
               className="bg-white rounded-xl shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1 overflow-hidden border border-gray-100"
             >
               {/* Project Image */}
-              <div className="h-36 bg-gradient-to-br from-gray-100 to-gray-200 flex items-center justify-center">
-                <div className="text-center">
-                  <div className="text-3xl mb-1">🚀</div>
-                  <p className="text-gray-500 text-xs">Project Preview</p>
-                </div>
+              <div className="h-36 bg-gradient-to-br from-gray-100 to-gray-200 overflow-hidden">
+                <img
+                  src={project.image}
+                  alt={project.title}
+                  className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                />
               </div>
               
               {/* Project Content */}
