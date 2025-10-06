@@ -229,19 +229,6 @@ const Playground: React.FC = () => {
             </div>
           </div>
         </div>
-
-        {/* Back to Home */}
-        <div className="text-center mt-12">
-          <Link
-            to="/"
-            className="inline-flex items-center bg-white text-primary border-2 border-secondary hover:bg-secondary hover:text-white transition-all duration-200 font-semibold py-3 px-8 rounded-lg shadow-md hover:shadow-lg"
-          >
-            <svg className="mr-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 19l-7-7m0 0l7-7m-7 7h18" />
-            </svg>
-            Back to Home
-          </Link>
-        </div>
       </div>
     </div>
   );
