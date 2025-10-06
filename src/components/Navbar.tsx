@@ -37,6 +37,12 @@ const Navbar: React.FC = () => {
                 Credentials
               </a>
               <a
+                href="/skills"
+                className="text-primary hover:text-secondary transition-colors duration-200 px-3 py-2 text-sm font-medium"
+              >
+                Skills
+              </a>
+              <a
                 href="/playground"
                 className="text-primary hover:text-secondary transition-colors duration-200 px-3 py-2 text-sm font-medium"
               >
@@ -95,6 +101,13 @@ const Navbar: React.FC = () => {
                 className="block text-primary hover:text-secondary transition-colors duration-200 px-3 py-2 text-base font-medium"
               >
                 Credentials
+              </a>
+              <a
+                href="/skills"
+                onClick={closeMobileMenu}
+                className="block text-primary hover:text-secondary transition-colors duration-200 px-3 py-2 text-base font-medium"
+              >
+                Skills
               </a>
               <a
                 href="/playground"
