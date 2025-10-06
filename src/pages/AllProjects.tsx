@@ -104,6 +104,9 @@ const AllProjects: React.FC = () => {
               <Link to="/credentials" className="text-primary hover:text-secondary transition-colors duration-200">
                 Credentials
               </Link>
+              <Link to="/playground" className="text-primary hover:text-secondary transition-colors duration-200">
+                Playground
+              </Link>
             </div>
             
             {/* Mobile menu button */}
@@ -150,6 +153,13 @@ const AllProjects: React.FC = () => {
                   className="block text-primary hover:text-secondary transition-colors duration-200 px-3 py-2 text-base font-medium"
                 >
                   Credentials
+                </Link>
+                <Link
+                  to="/playground"
+                  onClick={closeMobileMenu}
+                  className="block text-primary hover:text-secondary transition-colors duration-200 px-3 py-2 text-base font-medium"
+                >
+                  Playground
                 </Link>
               </div>
             </div>

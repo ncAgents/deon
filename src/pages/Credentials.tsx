@@ -84,6 +84,9 @@ const Credentials: React.FC = () => {
               <Link to="/credentials" className="text-secondary font-medium">
                 Credentials
               </Link>
+              <Link to="/playground" className="text-primary hover:text-secondary transition-colors duration-200">
+                Playground
+              </Link>
             </div>
             
             {/* Mobile menu button */}
@@ -130,6 +133,13 @@ const Credentials: React.FC = () => {
                   className="block text-secondary font-medium px-3 py-2 text-base"
                 >
                   Credentials
+                </Link>
+                <Link
+                  to="/playground"
+                  onClick={closeMobileMenu}
+                  className="block text-primary hover:text-secondary transition-colors duration-200 px-3 py-2 text-base font-medium"
+                >
+                  Playground
                 </Link>
               </div>
             </div>
