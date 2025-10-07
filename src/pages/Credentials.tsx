@@ -276,7 +276,7 @@ const Credentials: React.FC = () => {
         <div className="mb-12">
           <h2 className="text-3xl font-light text-primary text-center mb-12 tracking-wide">Certificates & Achievements</h2>
           
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-8">
             {certificates.map((cert) => (
               <div
                 key={cert.id}
@@ -307,6 +307,33 @@ const Credentials: React.FC = () => {
                 </div>
               </div>
             ))}
+          </div>
+        </div>
+
+        {/* Medium Blogs Section */}
+        <div className="bg-gradient-to-br from-secondary/10 to-hover/10 rounded-2xl p-8 mb-12 border border-secondary/20">
+          <div className="text-center">
+            <div className="w-16 h-16 bg-gradient-to-br from-secondary to-hover rounded-full flex items-center justify-center mx-auto mb-6">
+              <svg className="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M13.54 12a6.8 6.8 0 01-6.77 6.82A6.8 6.8 0 010 12a6.8 6.8 0 016.77-6.82A6.8 6.8 0 0113.54 12zM20.96 12c0 3.54-1.51 6.42-3.38 6.42-1.87 0-3.39-2.88-3.39-6.42s1.52-6.42 3.39-6.42 3.38 2.88 3.38 6.42M24 12c0 3.17-.53 5.75-1.19 5.75-.66 0-1.19-2.58-1.19-5.75s.53-5.75 1.19-5.75S24 8.83 24 12z"/>
+              </svg>
+            </div>
+            <h2 className="text-2xl font-light text-primary mb-4 tracking-wide">Technical Blog</h2>
+            <p className="text-gray-600 mb-6 max-w-2xl mx-auto leading-relaxed">
+              I write about AI, machine learning, blockchain development, and technical insights. 
+              Explore my latest articles and tutorials on Medium.
+            </p>
+            <a
+              href="https://medium.com/me/stories?tab=posts-published"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center bg-secondary hover:bg-hover text-white font-semibold py-3 px-8 rounded-lg transition-all duration-200 shadow-md hover:shadow-lg transform hover:-translate-y-1"
+            >
+              <svg className="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M13.54 12a6.8 6.8 0 01-6.77 6.82A6.8 6.8 0 010 12a6.8 6.8 0 016.77-6.82A6.8 6.8 0 0113.54 12zM20.96 12c0 3.54-1.51 6.42-3.38 6.42-1.87 0-3.39-2.88-3.39-6.42s1.52-6.42 3.39-6.42 3.38 2.88 3.38 6.42M24 12c0 3.17-.53 5.75-1.19 5.75-.66 0-1.19-2.58-1.19-5.75s.53-5.75 1.19-5.75S24 8.83 24 12z"/>
+              </svg>
+              Read My Articles
+            </a>
           </div>
         </div>
 
