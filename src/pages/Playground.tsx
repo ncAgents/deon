@@ -12,7 +12,7 @@ const Playground: React.FC = () => {
   const [messages, setMessages] = useState<Message[]>([
     {
       id: 1,
-      text: "Hi! I'm Deon's AI assistant. I can tell you about his work, projects, skills, and experience. What would you like to know?",
+      text: "Hello, let's chat about Deon 🤗\n\nThis is a preview AI assistant. For a more intelligent and comprehensive AI about Deon, visit: https://huggingface.co/spaces/chinesemusk/Deon",
       isUser: false,
       timestamp: new Date()
     }
@@ -39,40 +39,115 @@ const Playground: React.FC = () => {
   }, [messages]);
 
   const portfolioKnowledge = {
-    about: "Deon Chinese is a computer science student passionate about AI, reinforcement learning, and UI design. He builds intelligent systems and intuitive UIs, blending AI, reinforcement learning, and blockchain into elegant, functional products.",
-    skills: "Deon's main expertise includes AI Engineering, Data Science, and Blockchain development. His programming languages include Python (Expert), Rust (Advanced), R (Advanced), and React (Intermediate).",
-    projects: "Deon has worked on several impressive projects including an AI-Powered Trading Bot using reinforcement learning, a Blockchain Analytics Dashboard, and a Predictive Data Science Platform. You can view all his projects in the Projects section.",
-    experience: "Deon specializes in building intelligent systems that merge AI with great user experience. He experiments with blockchain innovations and focuses on creating seamless user experiences.",
-    contact: "You can reach Deon through the contact form on this website, or connect with him on social media including Twitter, LinkedIn, GitHub, and WhatsApp.",
-    resume: "Deon's resume is available for download in the Credentials section, along with his professional certificates and achievements."
+    about: "Deon Chinese is a brilliant computer science student who's basically a wizard at merging AI, reinforcement learning, and blockchain into beautiful, functional products. He's like the Tony Stark of tech - but with better UI design skills! 😄",
+    skills: "Deon's superpowers include: Python (he speaks it fluently), Rust (because C++ wasn't hard enough), R (for when he wants to be fancy with statistics), and React (for making things look pretty). His main expertise? AI Engineering, Data Science, and Blockchain development - basically the holy trinity of modern tech!",
+    projects: {
+      ardena: "Ardena is Deon's AI platform that lets people create AI agents without writing a single line of code. It's like having a personal AI assistant factory! The demo is live at ardena.xyz - check it out!",
+      egereats: "EgerEats is a complete food delivery app that Deon built from scratch. It's like Uber Eats, but probably with better code (and hopefully better food recommendations). You can try it at app.egereats.software!",
+      stellar: "Stellar Crowdfunding is Deon's blockchain baby - a decentralized crowdfunding platform built on Stellar using Soroban smart contracts. It's like Kickstarter, but with more blockchain magic and less fees!",
+      moon: "Moon Landing Agent - Deon trained an AI to land on the moon using reinforcement learning. Because apparently, teaching AI to land on celestial bodies is just a casual side project for him! 🚀",
+      sixDegrees: "Six Degrees of Separation - Deon built a graph-based algorithm to explore how we're all connected. It's like Facebook's 'People You May Know' but way more sophisticated and probably less creepy!"
+    },
+    experience: "Deon specializes in building intelligent systems that actually make sense to humans (which is harder than it sounds). He experiments with blockchain innovations and creates seamless user experiences - basically making complex tech look easy!",
+    contact: "Want to chat with Deon? You can use the contact form on this site, or stalk him on social media: Twitter (@Deonchinese), LinkedIn, GitHub (@Deon62), or even WhatsApp (+254702248984). He's surprisingly responsive for someone who probably has 47 projects running simultaneously!",
+    resume: "Deon's resume is available in the Credentials section, along with his professional certificates. It's probably the most impressive resume you'll see today - unless you're also a blockchain AI wizard!",
+    humor: [
+      "Fun fact: Deon probably dreams in Python syntax! 🐍",
+      "I heard Deon once debugged a blockchain issue by staring at it really hard. True story!",
+      "Deon's code is so clean, it probably has better hygiene than most humans!",
+      "Legend says Deon can make AI models that actually understand human emotions. Scary, right?",
+      "Deon once built a neural network that learned to make coffee. It was the best coffee ever made by a computer!"
+    ]
   };
 
   const getAIResponse = (userMessage: string): string => {
     const message = userMessage.toLowerCase();
     
-    if (message.includes('about') || message.includes('who') || message.includes('introduce')) {
-      return portfolioKnowledge.about;
-    } else if (message.includes('skill') || message.includes('expertise') || message.includes('language') || message.includes('programming')) {
-      return portfolioKnowledge.skills;
-    } else if (message.includes('project') || message.includes('work') || message.includes('portfolio') || message.includes('build')) {
-      return portfolioKnowledge.projects;
-    } else if (message.includes('experience') || message.includes('background') || message.includes('career')) {
-      return portfolioKnowledge.experience;
-    } else if (message.includes('contact') || message.includes('reach') || message.includes('connect') || message.includes('social')) {
-      return portfolioKnowledge.contact;
-    } else if (message.includes('resume') || message.includes('cv') || message.includes('certificate') || message.includes('credential')) {
-      return portfolioKnowledge.resume;
-    } else if (message.includes('hello') || message.includes('hi') || message.includes('hey')) {
-      return "Hello! I'm here to help you learn about Deon's work and expertise. Feel free to ask me anything about his projects, skills, or experience!";
-    } else if (message.includes('ai') || message.includes('artificial intelligence') || message.includes('machine learning')) {
-      return "Deon is passionate about AI and machine learning! He specializes in building intelligent systems, working with reinforcement learning, and creating AI-powered applications. His AI-Powered Trading Bot is a great example of his expertise in this field.";
-    } else if (message.includes('blockchain') || message.includes('crypto') || message.includes('defi')) {
-      return "Deon has significant experience in blockchain development! He's worked on blockchain analytics dashboards, smart contracts, and DeFi protocols. He experiments with blockchain innovations and integrates them into his projects.";
-    } else if (message.includes('design') || message.includes('ui') || message.includes('ux') || message.includes('interface')) {
-      return "Deon focuses on creating seamless user experiences and intuitive UIs. He blends technical expertise with great design to create elegant, functional products that users love.";
-    } else {
-      return "That's an interesting question! While I have extensive knowledge about Deon's work, projects, and expertise, I might not have specific information about that. Feel free to ask about his AI projects, blockchain work, data science experience, or any other aspects of his portfolio!";
+    // Specific project questions first
+    if (message.includes('ardena')) {
+      return portfolioKnowledge.projects.ardena;
     }
+    if (message.includes('egereats') || message.includes('eats')) {
+      return portfolioKnowledge.projects.egereats;
+    }
+    if (message.includes('stellar') || message.includes('crowdfunding')) {
+      return portfolioKnowledge.projects.stellar;
+    }
+    if (message.includes('moon') || message.includes('landing')) {
+      return portfolioKnowledge.projects.moon;
+    }
+    if (message.includes('six degrees') || message.includes('separation')) {
+      return portfolioKnowledge.projects.sixDegrees;
+    }
+    
+    // General project questions
+    if (message.includes('project') || message.includes('work') || message.includes('portfolio') || message.includes('build')) {
+      return "Deon has some seriously impressive projects! There's Ardena (AI platform), EgerEats (food delivery), Stellar Crowdfunding (blockchain), Moon Landing Agent (AI space mission), and Six Degrees of Separation (graph algorithms). Each one is more mind-blowing than the last! Want to know about any specific project?";
+    }
+    
+    // About Deon
+    if (message.includes('about') || message.includes('who') || message.includes('introduce') || message.includes('know about him')) {
+      return portfolioKnowledge.about;
+    }
+    
+    // Skills and expertise
+    if (message.includes('skill') || message.includes('expertise') || message.includes('language') || message.includes('programming')) {
+      return portfolioKnowledge.skills;
+    }
+    
+    // Experience and background
+    if (message.includes('experience') || message.includes('background') || message.includes('career')) {
+      return portfolioKnowledge.experience;
+    }
+    
+    // Contact information
+    if (message.includes('contact') || message.includes('reach') || message.includes('connect') || message.includes('social')) {
+      return portfolioKnowledge.contact;
+    }
+    
+    // Resume and credentials
+    if (message.includes('resume') || message.includes('cv') || message.includes('certificate') || message.includes('credential')) {
+      return portfolioKnowledge.resume;
+    }
+    
+    // AI and Machine Learning
+    if (message.includes('ai') || message.includes('artificial intelligence') || message.includes('machine learning') || message.includes('ml')) {
+      return "Deon is absolutely obsessed with AI! He's built Ardena (AI agent platform), trained a Moon Landing Agent using reinforcement learning, and probably has a neural network making his coffee by now! His AI projects are like watching magic happen, but with more math and less rabbits. 🧠✨";
+    }
+    
+    // Blockchain and crypto
+    if (message.includes('blockchain') || message.includes('crypto') || message.includes('defi')) {
+      return "Deon's blockchain game is strong! He built Stellar Crowdfunding using Soroban smart contracts. It's like he's trying to make blockchain actually useful for regular people (revolutionary concept, I know!). He experiments with blockchain innovations and makes them look easy - which they definitely are not! 🔗";
+    }
+    
+    // Design and UI/UX
+    if (message.includes('design') || message.includes('ui') || message.includes('ux') || message.includes('interface')) {
+      return "Deon has this magical ability to make complex tech look beautiful and intuitive. He blends technical expertise with great design to create products that don't make users want to throw their computers out the window. It's like he speaks both 'developer' and 'human' fluently! 🎨";
+    }
+    
+    // Greeting responses
+    if (message.includes('hello') || message.includes('hi') || message.includes('hey')) {
+      return "Hello! I'm here to help you learn about Deon's work and expertise. Feel free to ask me anything about his projects, skills, or experience!";
+    }
+    
+    // Humor and fun responses
+    if (message.includes('funny') || message.includes('joke') || message.includes('humor')) {
+      return portfolioKnowledge.humor[Math.floor(Math.random() * portfolioKnowledge.humor.length)];
+    }
+    
+    // Technology questions
+    if (message.includes('python')) {
+      return "Python is Deon's first language (after English, presumably). He uses it for everything from AI models to web backends. I'm pretty sure he could write Python in his sleep! 🐍";
+    }
+    if (message.includes('rust')) {
+      return "Rust is Deon's choice for when he wants to write code that's both fast AND safe. It's like he enjoys a challenge! He uses it for blockchain development and system programming. Brave soul! 🦀";
+    }
+    if (message.includes('react')) {
+      return "React is how Deon makes the web look pretty! He uses it for building user interfaces that don't make people cry. His React skills are solid - probably because he actually reads the documentation! ⚛️";
+    }
+    
+    // Default response
+    return "That's an interesting question! While I have extensive knowledge about Deon's work, projects, and expertise, I might not have specific information about that. Feel free to ask about his AI projects, blockchain work, data science experience, or any other aspects of his portfolio!";
   };
 
   const handleSendMessage = async () => {
@@ -330,6 +405,21 @@ const Playground: React.FC = () => {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8" />
                 </svg>
               </button>
+            </div>
+            
+            {/* AI Notice */}
+            <div className="mt-3 text-center">
+              <p className="text-xs text-gray-500">
+                This is a preview AI assistant. For a more intelligent and comprehensive AI about Deon, visit{' '}
+                <a 
+                  href="https://huggingface.co/spaces/chinesemusk/Deon" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="text-secondary hover:text-hover underline"
+                >
+                  Hugging Face Spaces
+                </a>
+              </p>
             </div>
           </div>
         </div>
