@@ -12,7 +12,7 @@ const Playground: React.FC = () => {
   const [messages, setMessages] = useState<Message[]>([
     {
       id: 1,
-      text: "Hello, let's chat about Deon 🤗\n\nThis is a preview AI assistant. For a more intelligent and comprehensive AI about Deon, visit: https://huggingface.co/spaces/chinesemusk/Deon",
+      text: "Hello, let's chat about Deon 🤗\n\nThis is a preview AI assistant. For a more intelligent and comprehensive AI about Deon, visit: ",
       isUser: false,
       timestamp: new Date()
     }
@@ -348,7 +348,21 @@ const Playground: React.FC = () => {
                       : 'bg-gray-100 text-gray-800 rounded-bl-md'
                   }`}
                 >
-                  <p className="text-sm leading-relaxed">{message.text}</p>
+                  {message.id === 1 ? (
+                    <div className="text-sm leading-relaxed">
+                      <p>{message.text}</p>
+                      <a 
+                        href="https://huggingface.co/spaces/chinesemusk/Deon" 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        className="text-secondary hover:text-hover underline font-medium"
+                      >
+                        Hugging Face Spaces
+                      </a>
+                    </div>
+                  ) : (
+                    <p className="text-sm leading-relaxed">{message.text}</p>
+                  )}
                   <p className={`text-xs mt-2 ${
                     message.isUser ? 'text-white/70' : 'text-gray-500'
                   }`}>
