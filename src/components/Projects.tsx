@@ -1,6 +1,20 @@
-import React from 'react';
+import React, { memo, useEffect } from 'react';
 
-const Projects: React.FC = () => {
+const Projects: React.FC = memo(() => {
+  // Preload critical images
+  useEffect(() => {
+    const preloadImages = [
+      '/ardena.png',
+      '/eats.png',
+      'https://images.unsplash.com/photo-1639762681485-074b7f938ba0?w=400&h=250&fit=crop&crop=center'
+    ];
+    
+    preloadImages.forEach(src => {
+      const img = new Image();
+      img.src = src;
+    });
+  }, []);
+
   const featuredProjects = [
     {
       id: 1,
@@ -134,6 +148,8 @@ const Projects: React.FC = () => {
       </div>
     </section>
   );
-};
+});
+
+Projects.displayName = 'Projects';
 
 export default Projects;

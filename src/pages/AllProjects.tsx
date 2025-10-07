@@ -1,9 +1,35 @@
-import React, { useState } from 'react';
+import React, { useState, memo, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 
-const AllProjects: React.FC = () => {
+const AllProjects: React.FC = memo(() => {
   const [selectedCategory, setSelectedCategory] = useState('All');
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [imagesLoaded, setImagesLoaded] = useState(false);
+
+  // Preload all project images
+  useEffect(() => {
+    const imageUrls = [
+      '/ardena.png',
+      '/eats.png',
+      '/moon.png',
+      '/six.png',
+      'https://images.unsplash.com/photo-1639762681485-074b7f938ba0?w=400&h=250&fit=crop&crop=center'
+    ];
+
+    let loadedCount = 0;
+    const totalImages = imageUrls.length;
+
+    imageUrls.forEach(src => {
+      const img = new Image();
+      img.onload = () => {
+        loadedCount++;
+        if (loadedCount === totalImages) {
+          setImagesLoaded(true);
+        }
+      };
+      img.src = src;
+    });
+  }, []);
 
   const toggleMobileMenu = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
@@ -240,7 +266,28 @@ const AllProjects: React.FC = () => {
 
         {/* Projects Grid */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
-          {filteredProjects.map((project) => (
+          {!imagesLoaded ? (
+            // Loading skeleton
+            Array.from({ length: 6 }).map((_, index) => (
+              <div key={index} className="bg-white rounded-xl shadow-md overflow-hidden border border-gray-100 animate-pulse">
+                <div className="h-36 bg-gray-200"></div>
+                <div className="p-6">
+                  <div className="h-6 bg-gray-200 rounded mb-3"></div>
+                  <div className="h-4 bg-gray-200 rounded mb-2"></div>
+                  <div className="h-4 bg-gray-200 rounded mb-4 w-3/4"></div>
+                  <div className="flex flex-wrap gap-2 mb-4">
+                    <div className="h-6 bg-gray-200 rounded-full w-16"></div>
+                    <div className="h-6 bg-gray-200 rounded-full w-20"></div>
+                  </div>
+                  <div className="flex space-x-3">
+                    <div className="h-8 bg-gray-200 rounded w-20"></div>
+                    <div className="h-8 bg-gray-200 rounded w-16"></div>
+                  </div>
+                </div>
+              </div>
+            ))
+          ) : (
+            filteredProjects.map((project) => (
             <div
               key={project.id}
               className="bg-white rounded-xl shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1 overflow-hidden border border-gray-100"
@@ -314,7 +361,8 @@ const AllProjects: React.FC = () => {
                 </div>
               </div>
             </div>
-          ))}
+            ))
+          )}
         </div>
 
         {/* View More Buttons */}
@@ -347,6 +395,8 @@ const AllProjects: React.FC = () => {
       </div>
     </div>
   );
-};
+});
+
+AllProjects.displayName = 'AllProjects';
 
 export default AllProjects;

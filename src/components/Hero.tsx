@@ -1,6 +1,11 @@
-import React, { useState } from 'react';
+import React, { useState, memo, useEffect } from 'react';
 
-const Hero: React.FC = () => {
+const Hero: React.FC = memo(() => {
+  // Preload profile image
+  useEffect(() => {
+    const img = new Image();
+    img.src = '/deon.jpg';
+  }, []);
   const [isDownloading, setIsDownloading] = useState(false);
   const [showSuccess, setShowSuccess] = useState(false);
 
@@ -94,6 +99,8 @@ const Hero: React.FC = () => {
       </div>
     </section>
   );
-};
+});
+
+Hero.displayName = 'Hero';
 
 export default Hero;
