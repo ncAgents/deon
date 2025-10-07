@@ -1,19 +1,73 @@
-import React, { memo, useEffect } from 'react';
+import React, { memo, useEffect, useState, useRef } from 'react';
 
 const Projects: React.FC = memo(() => {
-  // Preload critical images
+  const [imagesLoaded, setImagesLoaded] = useState(false);
+  const [isVisible, setIsVisible] = useState(false);
+  const sectionRef = useRef<HTMLElement>(null);
+
+  // Intersection Observer to load images when section is about to be visible
   useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting && !isVisible) {
+          setIsVisible(true);
+        }
+      },
+      { 
+        rootMargin: '200px 0px', // Start loading 200px before the section is visible
+        threshold: 0.1 
+      }
+    );
+
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current);
+    }
+
+    // Fallback: if section is already visible, start loading immediately
+    if (sectionRef.current) {
+      const rect = sectionRef.current.getBoundingClientRect();
+      if (rect.top < window.innerHeight) {
+        setIsVisible(true);
+      }
+    }
+
+    return () => {
+      if (sectionRef.current) {
+        observer.unobserve(sectionRef.current);
+      }
+    };
+  }, [isVisible]);
+
+  // Preload critical images with loading state
+  useEffect(() => {
+    if (!isVisible) return;
+
     const preloadImages = [
       '/ardena.png',
       '/eats.png',
       'https://images.unsplash.com/photo-1639762681485-074b7f938ba0?w=400&h=250&fit=crop&crop=center'
     ];
     
+    let loadedCount = 0;
+    const totalImages = preloadImages.length;
+
     preloadImages.forEach(src => {
       const img = new Image();
+      img.onload = () => {
+        loadedCount++;
+        if (loadedCount === totalImages) {
+          setImagesLoaded(true);
+        }
+      };
+      img.onerror = () => {
+        loadedCount++;
+        if (loadedCount === totalImages) {
+          setImagesLoaded(true);
+        }
+      };
       img.src = src;
     });
-  }, []);
+  }, [isVisible]);
 
   const featuredProjects = [
     {
@@ -49,7 +103,7 @@ const Projects: React.FC = memo(() => {
   ];
 
   return (
-    <section id="projects" className="bg-background py-20">
+    <section ref={sectionRef} id="projects" className="bg-background py-20">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
           {/* Section Title */}
@@ -61,7 +115,29 @@ const Projects: React.FC = memo(() => {
 
         {/* Projects Grid */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
-          {featuredProjects.map((project) => (
+          {!imagesLoaded ? (
+            // Loading skeleton for featured projects
+            Array.from({ length: 3 }).map((_, index) => (
+              <div key={index} className="bg-white rounded-xl shadow-md overflow-hidden border border-gray-100 animate-pulse">
+                <div className="h-36 bg-gray-200"></div>
+                <div className="p-6">
+                  <div className="h-6 bg-gray-200 rounded mb-3"></div>
+                  <div className="h-4 bg-gray-200 rounded mb-2"></div>
+                  <div className="h-4 bg-gray-200 rounded mb-4 w-3/4"></div>
+                  <div className="flex flex-wrap gap-2 mb-4">
+                    <div className="h-6 bg-gray-200 rounded-full w-16"></div>
+                    <div className="h-6 bg-gray-200 rounded-full w-20"></div>
+                    <div className="h-6 bg-gray-200 rounded-full w-14"></div>
+                  </div>
+                  <div className="flex space-x-3">
+                    <div className="h-8 bg-gray-200 rounded w-20"></div>
+                    <div className="h-8 bg-gray-200 rounded w-16"></div>
+                  </div>
+                </div>
+              </div>
+            ))
+          ) : (
+            featuredProjects.map((project) => (
             <div
               key={project.id}
               className="bg-white rounded-xl shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1 overflow-hidden border border-gray-100"
@@ -71,7 +147,7 @@ const Projects: React.FC = memo(() => {
                 <img
                   src={project.image}
                   alt={project.title}
-                  loading="lazy"
+                  loading="eager"
                   className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
                 />
               </div>
@@ -130,7 +206,8 @@ const Projects: React.FC = memo(() => {
                 </div>
               </div>
             </div>
-          ))}
+            ))
+          )}
         </div>
 
         {/* View All Projects Button */}
