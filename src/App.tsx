@@ -7,6 +7,7 @@ const AllProjects = React.lazy(() => import('./pages/AllProjects'));
 const Credentials = React.lazy(() => import('./pages/Credentials'));
 const Skills = React.lazy(() => import('./pages/Skills'));
 const Playground = React.lazy(() => import('./pages/Playground'));
+const MyLab = React.lazy(() => import('./pages/MyLab'));
 const NotFound = React.lazy(() => import('./pages/NotFound'));
 const PrivateRepo = React.lazy(() => import('./pages/PrivateRepo'));
 
@@ -30,6 +31,7 @@ const App: React.FC = () => {
           <Route path="/credentials" element={<Credentials />} />
           <Route path="/skills" element={<Skills />} />
           <Route path="/playground" element={<Playground />} />
+          <Route path="/my-lab" element={<MyLab />} />
           <Route path="/coming-soon" element={<NotFound />} />
           <Route path="/private-repo" element={<PrivateRepo />} />
           <Route path="*" element={<NotFound />} />
