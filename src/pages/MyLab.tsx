@@ -19,57 +19,148 @@ const MyLab: React.FC = memo(() => {
       id: 1,
       title: "Recursion",
       teaser: "A function that calls itself to solve problems elegantly.",
-      description: "Recursion is a programming technique where a function calls itself to solve smaller instances of the same problem. It's like a Russian nesting doll - each doll contains a smaller version of itself. In code, this means breaking down complex problems into simpler, identical sub-problems. The key is having a base case (when to stop) and a recursive case (how to break it down further). It's powerful for tasks like traversing tree structures, calculating factorials, or solving puzzles like the Tower of Hanoi.",
+      description: "Recursion is a programming technique where a function calls itself to solve smaller instances of the same problem. Think of it like Russian nesting dolls, where each doll contains a smaller version of itself. In code, this means breaking down complex problems into simpler, identical sub-problems. The key is having a base case (when to stop) and a recursive case (how to break it down further). It's powerful for tasks like traversing tree structures, calculating factorials, or solving puzzles like the Tower of Hanoi.",
       category: "Algorithms"
     },
     {
       id: 2,
-      title: "Fermi Paradox",
-      teaser: "If the universe is so vast, where is everyone?",
-      description: "The Fermi Paradox asks a simple but profound question: given the vast number of stars and planets in our galaxy, why haven't we found evidence of other intelligent civilizations? Enrico Fermi famously asked 'Where is everybody?' during a lunch conversation in 1950. Possible explanations range from the Great Filter (something prevents civilizations from reaching advanced stages) to the Zoo Hypothesis (advanced civilizations are watching but not interfering). It challenges our assumptions about life, intelligence, and our place in the cosmos.",
-      category: "Universe"
+      title: "Breadth First Search",
+      teaser: "Exploring all neighbors before moving deeper.",
+      description: "Breadth First Search (BFS) is an algorithm for traversing or searching tree or graph data structures. It explores all nodes at the present depth level before moving on to nodes at the next depth level. Imagine searching for a friend in a building by checking every room on the first floor before going to the second floor. BFS guarantees finding the shortest path in unweighted graphs and is used in social networks, GPS navigation, and web crawling.",
+      category: "Algorithms"
     },
     {
       id: 3,
-      title: "Neural Networks",
-      teaser: "Teaching computers to think like brains, one connection at a time.",
-      description: "Neural networks are computing systems inspired by biological neural networks. They consist of interconnected nodes (neurons) that process information by passing signals between layers. Each connection has a weight that adjusts during learning, similar to how our brains strengthen connections through experience. These networks can recognize patterns, make predictions, and even create art. They're the foundation of modern AI, powering everything from image recognition to language translation.",
-      category: "AI"
+      title: "Depth First Search",
+      teaser: "Going as deep as possible before backtracking.",
+      description: "Depth First Search (DFS) is an algorithm that explores as far as possible along each branch before backtracking. Think of it like exploring a maze by always taking the first available path and only turning back when you hit a dead end. DFS uses less memory than BFS and is perfect for problems like finding all possible solutions, detecting cycles, or solving puzzles where you need to explore every possibility.",
+      category: "Algorithms"
     },
     {
       id: 4,
-      title: "Blockchain",
-      teaser: "A digital ledger that's impossible to tamper with.",
-      description: "Blockchain is a distributed ledger technology that maintains a continuously growing list of records (blocks) linked and secured using cryptography. Each block contains a cryptographic hash of the previous block, creating an unbreakable chain. This makes it virtually impossible to alter past records without changing all subsequent blocks. Beyond cryptocurrency, blockchain enables smart contracts, supply chain tracking, and decentralized applications that don't require trusted intermediaries.",
-      category: "Technology"
+      title: "Prisoner's Dilemma",
+      teaser: "The classic game of cooperation versus betrayal.",
+      description: "The Prisoner's Dilemma is a fundamental example in game theory that shows why two rational individuals might not cooperate, even when it appears to be in their best interest. Two prisoners are interrogated separately and must decide whether to betray their partner or remain silent. The paradox is that while cooperation would benefit both, the rational choice for each individual is to betray. This simple scenario explains complex behaviors in economics, politics, and social interactions.",
+      category: "Game Theory"
     },
     {
       id: 5,
-      title: "Creative Constraints",
-      teaser: "Sometimes limitations are the key to breakthrough innovation.",
-      description: "Creative constraints are limitations that actually enhance creativity rather than hinder it. When we have unlimited options, we often suffer from choice paralysis. But when we're forced to work within specific boundaries - like using only three colors, writing a story in exactly 100 words, or building with limited materials - our brains find novel solutions. This principle is used in design thinking, where constraints like time, budget, or resources often lead to the most innovative solutions.",
-      category: "Creativity"
+      title: "Chicken Game",
+      teaser: "The dangerous game of brinkmanship and courage.",
+      description: "The Chicken Game is a model of conflict where two parties engage in a potentially dangerous situation to see who will back down first. Named after the dangerous game of driving cars toward each other, it represents situations where backing down means losing face, but continuing means mutual destruction. This game theory model explains nuclear standoffs, business negotiations, and social conflicts where both parties have incentives to appear tough while avoiding catastrophic outcomes.",
+      category: "Game Theory"
     },
     {
       id: 6,
-      title: "Quantum Computing",
-      teaser: "Computing with the weirdness of quantum mechanics.",
-      description: "Quantum computing harnesses quantum mechanical phenomena like superposition and entanglement to process information. Unlike classical bits that are either 0 or 1, quantum bits (qubits) can exist in multiple states simultaneously. This allows quantum computers to explore many solutions at once, potentially solving certain problems exponentially faster than classical computers. While still in early stages, quantum computing could revolutionize cryptography, drug discovery, and optimization problems.",
-      category: "Technology"
+      title: "Game Theory",
+      teaser: "The mathematics of strategic decision making.",
+      description: "Game theory is the mathematical study of strategic decision making in situations where the outcome depends on the choices of multiple players. It analyzes how rational individuals make decisions when their success depends on the actions of others. From economics to biology, game theory explains everything from market competition to evolutionary strategies. It provides frameworks for understanding cooperation, conflict, and the emergence of social norms.",
+      category: "Game Theory"
     },
     {
       id: 7,
-      title: "The Butterfly Effect",
+      title: "Butterfly Effect",
       teaser: "How a small change can have massive consequences.",
       description: "The Butterfly Effect is a concept from chaos theory suggesting that small changes in initial conditions can lead to vastly different outcomes. The name comes from the idea that a butterfly flapping its wings in Brazil could set off a tornado in Texas. This isn't about butterflies causing weather, but about how complex systems are sensitive to initial conditions. It explains why weather prediction is so difficult and why small decisions in our lives can have profound long-term effects.",
       category: "Theories"
     },
     {
       id: 8,
-      title: "Design Thinking",
-      teaser: "Human-centered problem solving that starts with empathy.",
-      description: "Design thinking is a methodology for solving complex problems by focusing on human needs. It follows five stages: Empathize (understand users), Define (identify problems), Ideate (brainstorm solutions), Prototype (create simple versions), and Test (gather feedback). This iterative process ensures solutions are both innovative and practical. It's used beyond traditional design - in business strategy, education, and social innovation. The key insight is that the best solutions come from deeply understanding the people you're designing for.",
-      category: "Creativity"
+      title: "Fermi Paradox",
+      teaser: "If the universe is so vast, where is everyone?",
+      description: "The Fermi Paradox asks a simple but profound question: given the vast number of stars and planets in our galaxy, why haven't we found evidence of other intelligent civilizations? Enrico Fermi famously asked 'Where is everybody?' during a lunch conversation in 1950. Possible explanations range from the Great Filter (something prevents civilizations from reaching advanced stages) to the Zoo Hypothesis (advanced civilizations are watching but not interfering). It challenges our assumptions about life, intelligence, and our place in the cosmos.",
+      category: "Universe"
+    },
+    {
+      id: 9,
+      title: "Quantum Zeno Effect",
+      teaser: "How observation can freeze quantum systems.",
+      description: "The Quantum Zeno Effect is a phenomenon where frequent measurements of a quantum system can prevent it from changing. Named after Zeno's paradox about motion, it suggests that a watched quantum pot never boils. In quantum mechanics, continuous observation can actually freeze a system in its initial state. This counterintuitive effect has been experimentally verified and has implications for quantum computing, where it can be used to protect quantum states from decoherence.",
+      category: "Physics"
+    },
+    {
+      id: 10,
+      title: "Banach Tarski Paradox",
+      teaser: "The mathematical magic of infinite sets.",
+      description: "The Banach Tarski Paradox is a theorem in mathematics that states you can take a solid ball in 3D space and cut it into a finite number of pieces, then reassemble those pieces into two balls identical to the original. This seems impossible because it appears to create matter from nothing. The paradox relies on the Axiom of Choice and works because the pieces are not measurable sets. It demonstrates the strange properties of infinite sets and challenges our intuitive understanding of volume and space.",
+      category: "Mathematics"
+    },
+    {
+      id: 11,
+      title: "Superposition",
+      teaser: "Being in multiple states simultaneously.",
+      description: "Superposition is a fundamental principle in quantum mechanics where a quantum system can exist in multiple states simultaneously until it's observed. Like Schrödinger's cat being both alive and dead, quantum particles can be in multiple positions, have multiple energies, or spin in multiple directions at once. This property is what makes quantum computers so powerful, as they can process many possibilities simultaneously. Superposition challenges our classical understanding of reality and is the foundation of quantum mechanics.",
+      category: "Physics"
+    },
+    {
+      id: 12,
+      title: "Holographic Principle",
+      teaser: "The universe as information on a boundary.",
+      description: "The Holographic Principle suggests that all the information contained in a volume of space can be represented as information on the boundary of that space. It's like how a 3D hologram can be encoded on a 2D surface. This principle, emerging from black hole physics, suggests that our three-dimensional reality might be a projection of information stored on a two-dimensional surface. It's a radical idea that could unify quantum mechanics and general relativity, potentially explaining the nature of spacetime itself.",
+      category: "Physics"
+    },
+    {
+      id: 13,
+      title: "Time Dilation",
+      teaser: "How time slows down at high speeds.",
+      description: "Time dilation is a phenomenon predicted by Einstein's theory of relativity where time passes at different rates for observers in different reference frames. The faster you move, the slower time passes for you relative to someone at rest. This isn't just theoretical: GPS satellites must account for time dilation to maintain accuracy. Time dilation shows that time is not absolute but depends on your motion and gravitational field, fundamentally changing our understanding of the nature of time.",
+      category: "Physics"
+    },
+    {
+      id: 14,
+      title: "Heat Death of the Universe",
+      teaser: "The ultimate fate of our cosmos.",
+      description: "The Heat Death of the Universe is a theory about the ultimate fate of the cosmos. As the universe expands, entropy increases, and eventually all energy will be evenly distributed. Stars will burn out, matter will decay, and the universe will reach a state of maximum entropy where no work can be done. It's not a dramatic explosion but a slow, cold fade into darkness. This thermodynamic end state represents the universe's final equilibrium, where no energy gradients exist to drive any processes.",
+      category: "Universe"
+    },
+    {
+      id: 15,
+      title: "The Halting Problem",
+      teaser: "The fundamental limit of computation.",
+      description: "The Halting Problem is a fundamental result in computer science that proves it's impossible to create a general algorithm that can determine whether any given program will halt or run forever. Alan Turing proved this in 1936, showing that there are limits to what computers can do. This result has profound implications for the nature of computation, artificial intelligence, and the limits of mathematical proof. It demonstrates that some problems are fundamentally unsolvable, no matter how powerful our computers become.",
+      category: "Computer Science"
+    },
+    {
+      id: 16,
+      title: "Birthday Paradox",
+      teaser: "Why you only need 23 people for a 50% chance of shared birthdays.",
+      description: "The Birthday Paradox demonstrates how our intuition about probability can be misleading. In a group of just 23 people, there's a 50% chance that two people share the same birthday. Most people would guess you'd need 183 people for a 50% chance. This counterintuitive result comes from the fact that we're not looking for a specific birthday match, but any match among all possible pairs. It's a classic example of how combinatorial mathematics can surprise us and has applications in cryptography and hash collisions.",
+      category: "Mathematics"
+    },
+    {
+      id: 17,
+      title: "The Singularity",
+      teaser: "When AI surpasses human intelligence.",
+      description: "The Singularity refers to a hypothetical future point when artificial intelligence surpasses human intelligence, leading to rapid, unpredictable changes in civilization. Coined by mathematician John von Neumann and popularized by Ray Kurzweil, the concept suggests that once AI reaches human-level intelligence, it could quickly improve itself, leading to superintelligence. This could result in either utopian abundance or existential risk, depending on how the transition is managed. The Singularity represents both the promise and peril of advanced AI development.",
+      category: "AI"
+    },
+    {
+      id: 18,
+      title: "Neural Emergence",
+      teaser: "Intelligence arising from simple units.",
+      description: "Neural Emergence is the phenomenon where complex intelligence and behavior arise from the interaction of simple, individual units. Like how consciousness emerges from billions of simple neurons, or how swarm intelligence emerges from simple rules followed by individual agents. This principle suggests that intelligence isn't just about having smart components, but about how those components interact and self-organize. It's the foundation of artificial neural networks and explains how complex behaviors can emerge from simple computational rules.",
+      category: "AI"
+    },
+    {
+      id: 19,
+      title: "Stochastic Parrots Hypothesis",
+      teaser: "Do LLMs understand or just predict?",
+      description: "The Stochastic Parrots Hypothesis, proposed by researchers including Emily Bender, suggests that large language models like GPT don't truly understand language but are sophisticated pattern-matching systems that predict the next word based on training data. Like a parrot that can mimic speech without understanding meaning, these models can generate coherent text without genuine comprehension. This hypothesis challenges claims about AI understanding and raises important questions about the nature of intelligence, meaning, and the capabilities of current AI systems.",
+      category: "AI"
+    },
+    {
+      id: 20,
+      title: "Anthropic Reasoning",
+      teaser: "Why we exist in a universe that allows us.",
+      description: "Anthropic Reasoning is the principle that we can only observe a universe that is compatible with our existence. It explains why the fundamental constants of physics seem fine-tuned for life. The weak anthropic principle states that we observe the universe as it is because we couldn't exist in a universe with different constants. The strong version suggests the universe must be such that observers can exist. This reasoning helps explain cosmic coincidences and has implications for multiverse theories and the nature of physical laws.",
+      category: "Physics"
+    },
+    {
+      id: 21,
+      title: "Boltzmann Brains",
+      teaser: "Random self-aware fluctuations in space.",
+      description: "Boltzmann Brains are hypothetical self-aware entities that could arise from random fluctuations in a universe in thermal equilibrium. Named after physicist Ludwig Boltzmann, the concept suggests that in an infinite universe with infinite time, random quantum fluctuations could occasionally produce a fully formed, conscious brain. This thought experiment challenges our understanding of consciousness, the arrow of time, and the nature of reality. It's a profound puzzle in cosmology that questions whether we might be Boltzmann Brains ourselves.",
+      category: "Physics"
     }
   ];
 
@@ -87,10 +178,12 @@ const MyLab: React.FC = memo(() => {
     const colors: { [key: string]: string } = {
       'AI': 'bg-blue-100 text-blue-800',
       'Algorithms': 'bg-green-100 text-green-800',
-      'Universe': 'bg-purple-100 text-purple-800',
-      'Technology': 'bg-cyan-100 text-cyan-800',
-      'Creativity': 'bg-orange-100 text-orange-800',
-      'Theories': 'bg-pink-100 text-pink-800'
+      'Game Theory': 'bg-yellow-100 text-yellow-800',
+      'Physics': 'bg-purple-100 text-purple-800',
+      'Mathematics': 'bg-indigo-100 text-indigo-800',
+      'Computer Science': 'bg-cyan-100 text-cyan-800',
+      'Universe': 'bg-pink-100 text-pink-800',
+      'Theories': 'bg-orange-100 text-orange-800'
     };
     return colors[category] || 'bg-gray-100 text-gray-800';
   };
