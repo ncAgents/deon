@@ -104,7 +104,7 @@ const MyLab: React.FC = memo(() => {
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-6">
             <p className="text-lg text-gray-600 max-w-2xl mx-auto leading-relaxed font-light">
-              Exploring ideas that shape how I think and build
+            My Lab is a space for ideas that make me pause, think, or smile from neural networks to the nature of time. Simple words, deep thoughts, and endless curiosity.
             </p>
           </div>
         </div>
@@ -113,7 +113,7 @@ const MyLab: React.FC = memo(() => {
       {/* Concepts Grid */}
       <section className="bg-background py-12">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2 md:gap-6">
             {concepts.map((concept) => (
               <div
                 key={concept.id}
