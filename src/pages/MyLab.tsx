@@ -161,6 +161,83 @@ const MyLab: React.FC = memo(() => {
       teaser: "Random self-aware fluctuations in space.",
       description: "Boltzmann Brains are hypothetical self-aware entities that could arise from random fluctuations in a universe in thermal equilibrium. Named after physicist Ludwig Boltzmann, the concept suggests that in an infinite universe with infinite time, random quantum fluctuations could occasionally produce a fully formed, conscious brain. This thought experiment challenges our understanding of consciousness, the arrow of time, and the nature of reality. It's a profound puzzle in cosmology that questions whether we might be Boltzmann Brains ourselves.",
       category: "Physics"
+    },
+    {
+      id: 22,
+      title: "The Observer Effect",
+      teaser: "Observation changes what's observed.",
+      description: "The Observer Effect is a fundamental principle in quantum mechanics where the act of observation or measurement changes the system being observed. Unlike classical physics where we can observe without affecting the system, quantum systems are so sensitive that the measurement process itself alters the state. This isn't just about the tools we use, but about the fundamental nature of quantum reality. The Observer Effect shows that consciousness and measurement play a crucial role in determining what exists in the quantum world.",
+      category: "Physics"
+    },
+    {
+      id: 23,
+      title: "Schrödinger's Cat",
+      teaser: "Alive and dead until measured.",
+      description: "Schrödinger's Cat is a famous thought experiment that illustrates the strange nature of quantum superposition. A cat is placed in a box with a radioactive atom that has a 50% chance of decaying and releasing poison. According to quantum mechanics, until we open the box and observe, the cat exists in a superposition of being both alive and dead simultaneously. This paradox highlights the difference between quantum weirdness at the microscopic level and our everyday experience of reality.",
+      category: "Physics"
+    },
+    {
+      id: 24,
+      title: "Causal Loops",
+      teaser: "Cause and effect feeding each other in time travel.",
+      description: "Causal Loops are theoretical scenarios in time travel where an event causes itself through a circular chain of cause and effect. Imagine going back in time and giving your past self the idea that you later use to go back in time. The information or object has no clear origin point, creating a paradox. These loops challenge our understanding of causality and suggest that time travel might allow for events without clear beginnings. They're a staple of science fiction but also a serious topic in theoretical physics.",
+      category: "Physics"
+    },
+    {
+      id: 25,
+      title: "The Ship of Theseus",
+      teaser: "Identity through gradual change.",
+      description: "The Ship of Theseus is a classic philosophical paradox that questions the nature of identity and continuity. If you replace all the planks of a ship one by one, is it still the same ship? What if you use the old planks to build a new ship? This thought experiment explores whether objects maintain their identity through gradual change and challenges our intuitions about what makes something the same thing over time. It applies to everything from cells in our bodies to the gradual evolution of ideas and institutions.",
+      category: "Philosophy"
+    },
+    {
+      id: 26,
+      title: "Quantum Teleportation",
+      teaser: "Transferring information without matter.",
+      description: "Quantum Teleportation is a process that transfers quantum information from one location to another without physically moving the particles. It works by creating quantum entanglement between two particles, then measuring the original particle and sending the measurement results to the destination. The receiving particle then transforms into an exact copy of the original. This doesn't violate the speed of light because the actual information transfer requires classical communication. It's a key technology for quantum computing and secure communication.",
+      category: "Physics"
+    },
+    {
+      id: 27,
+      title: "Chaos Theory",
+      teaser: "Order emerging from randomness.",
+      description: "Chaos Theory studies how small changes in initial conditions can lead to vastly different outcomes in complex systems. Despite the name, chaos theory reveals hidden order within seemingly random systems. It shows that many natural phenomena, from weather patterns to heart rhythms, follow deterministic rules that are so sensitive to initial conditions that they appear random. This theory has applications in meteorology, economics, biology, and helps us understand the delicate balance between predictability and unpredictability in nature.",
+      category: "Mathematics"
+    },
+    {
+      id: 28,
+      title: "Fractals",
+      teaser: "Infinite self-repeating patterns.",
+      description: "Fractals are geometric patterns that repeat at every scale, creating infinite complexity from simple rules. They appear throughout nature in snowflakes, coastlines, tree branches, and even in our lungs. Fractals have fractional dimensions, meaning they exist between whole numbers. A coastline might have a dimension of 1.25, more complex than a line but less than a plane. These patterns reveal the hidden mathematical beauty in natural forms and have applications in computer graphics, antenna design, and understanding natural phenomena.",
+      category: "Mathematics"
+    },
+    {
+      id: 29,
+      title: "Golden Ratio",
+      teaser: "Math hidden in art and nature.",
+      description: "The Golden Ratio is approximately 1.618, a mathematical constant that appears throughout art, architecture, and nature. It's the ratio where the whole is to the larger part as the larger part is to the smaller part. This ratio creates aesthetically pleasing proportions found in the Parthenon, the Mona Lisa, sunflower spirals, and even in the proportions of the human body. The Golden Ratio represents a universal standard of beauty and harmony that connects mathematics with aesthetics and natural design.",
+      category: "Mathematics"
+    },
+    {
+      id: 30,
+      title: "Time Crystals",
+      teaser: "Structures that repeat in time instead of space.",
+      description: "Time Crystals are a new phase of matter that repeat their structure in time rather than space, creating perpetual motion without energy input. Unlike regular crystals that have repeating patterns in space, time crystals have patterns that repeat over time. They were first proposed in 2012 and experimentally created in 2017. These structures could revolutionize quantum computing and challenge our understanding of thermodynamics by creating systems that never reach equilibrium.",
+      category: "Physics"
+    },
+    {
+      id: 31,
+      title: "Retrocausality",
+      teaser: "Future events influencing the past.",
+      description: "Retrocausality is the theoretical possibility that future events can influence past events, reversing the normal flow of cause and effect. While this seems to violate our everyday understanding of time, some interpretations of quantum mechanics suggest that measurement choices in the future can affect quantum states in the past. This doesn't allow for changing history, but it challenges our linear understanding of time and suggests that the quantum world might operate with a more flexible concept of causality than classical physics.",
+      category: "Physics"
+    },
+    {
+      id: 32,
+      title: "Quantum Levitation",
+      teaser: "Objects floating on magnetic fields.",
+      description: "Quantum Levitation occurs when superconductors are cooled below their critical temperature and placed in a magnetic field, causing them to float above magnets. This happens because superconductors expel magnetic fields, creating perfect diamagnetism. The quantum locking effect allows the superconductor to hover at specific heights and even tilt at angles while maintaining its position. This phenomenon demonstrates the strange properties of quantum mechanics at macroscopic scales and has potential applications in transportation and energy storage.",
+      category: "Physics"
     }
   ];
 
@@ -183,7 +260,8 @@ const MyLab: React.FC = memo(() => {
       'Mathematics': 'bg-indigo-100 text-indigo-800',
       'Computer Science': 'bg-cyan-100 text-cyan-800',
       'Universe': 'bg-pink-100 text-pink-800',
-      'Theories': 'bg-orange-100 text-orange-800'
+      'Theories': 'bg-orange-100 text-orange-800',
+      'Philosophy': 'bg-teal-100 text-teal-800'
     };
     return colors[category] || 'bg-gray-100 text-gray-800';
   };
