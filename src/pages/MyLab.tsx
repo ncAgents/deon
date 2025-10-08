@@ -13,6 +13,7 @@ interface Concept {
 const MyLab: React.FC = memo(() => {
   const [selectedConcept, setSelectedConcept] = useState<Concept | null>(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [searchTerm, setSearchTerm] = useState('');
 
   const concepts: Concept[] = [
     {
@@ -251,6 +252,14 @@ const MyLab: React.FC = memo(() => {
     setSelectedConcept(null);
   };
 
+  // Filter concepts based on search term
+  const filteredConcepts = concepts.filter(concept => 
+    concept.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
+    concept.teaser.toLowerCase().includes(searchTerm.toLowerCase()) ||
+    concept.description.toLowerCase().includes(searchTerm.toLowerCase()) ||
+    concept.category.toLowerCase().includes(searchTerm.toLowerCase())
+  );
+
   const getCategoryColor = (category: string) => {
     const colors: { [key: string]: string } = {
       'AI': 'bg-blue-100 text-blue-800',
@@ -281,11 +290,63 @@ const MyLab: React.FC = memo(() => {
         </div>
       </section>
 
+      {/* Floating Search Bar */}
+      <div className="sticky top-16 z-40 bg-white/95 backdrop-blur-sm border-b border-gray-200 py-4">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="relative">
+            <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+              <svg className="h-5 w-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+              </svg>
+            </div>
+            <input
+              type="text"
+              placeholder="Search concepts, categories, or ideas..."
+              value={searchTerm}
+              onChange={(e) => setSearchTerm(e.target.value)}
+              className="block w-full pl-10 pr-3 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-secondary focus:border-transparent bg-white/80 backdrop-blur-sm text-sm"
+            />
+            {searchTerm && (
+              <button
+                onClick={() => setSearchTerm('')}
+                className="absolute inset-y-0 right-0 pr-3 flex items-center text-gray-400 hover:text-gray-600"
+              >
+                <svg className="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                </svg>
+              </button>
+            )}
+          </div>
+          {searchTerm && (
+            <div className="mt-2 text-sm text-gray-600">
+              {filteredConcepts.length} concept{filteredConcepts.length !== 1 ? 's' : ''} found
+            </div>
+          )}
+        </div>
+      </div>
+
       {/* Concepts Grid */}
       <section className="bg-background py-8 md:py-12">
         <div className="max-w-6xl mx-auto px-3 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-1 md:gap-6">
-            {concepts.map((concept) => (
+          {filteredConcepts.length === 0 ? (
+            <div className="col-span-full text-center py-12">
+              <div className="text-gray-400 mb-4">
+                <svg className="w-16 h-16 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                </svg>
+              </div>
+              <h3 className="text-lg font-medium text-gray-600 mb-2">No concepts found</h3>
+              <p className="text-gray-500 mb-4">Try searching for different terms or browse all concepts</p>
+              <button
+                onClick={() => setSearchTerm('')}
+                className="text-secondary hover:text-hover font-medium"
+              >
+                Clear search
+              </button>
+            </div>
+          ) : (
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-1 md:gap-6">
+              {filteredConcepts.map((concept) => (
               <div
                 key={concept.id}
                 onClick={() => openModal(concept)}
@@ -316,8 +377,9 @@ const MyLab: React.FC = memo(() => {
                   </div>
                 </div>
               </div>
-            ))}
-          </div>
+              ))}
+            </div>
+          )}
         </div>
       </section>
 
