@@ -100,48 +100,46 @@ const MyLab: React.FC = memo(() => {
       <Navbar />
       
       {/* Hero Section */}
-      <section className="bg-white py-4">
+      <section className="bg-white py-3">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-6">
-            <p className="text-lg text-gray-600 max-w-2xl mx-auto leading-relaxed font-light">
-            My Lab is a space for ideas that make me pause, think, or smile from neural networks to the nature of time. Simple words, deep thoughts, and endless curiosity.
+          <div className="text-center mb-4">
+            <p className="text-sm md:text-lg text-gray-600 max-w-2xl mx-auto leading-relaxed font-light">
+              My Lab is a space for ideas that make me pause, think, or smile from neural networks to the nature of time. Simple words, deep thoughts, and endless curiosity.
             </p>
           </div>
         </div>
       </section>
 
       {/* Concepts Grid */}
-      <section className="bg-background py-12">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2 md:gap-6">
+      <section className="bg-background py-8 md:py-12">
+        <div className="max-w-6xl mx-auto px-3 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-1 md:gap-6">
             {concepts.map((concept) => (
               <div
                 key={concept.id}
                 onClick={() => openModal(concept)}
                 className="bg-white rounded-xl shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1 cursor-pointer overflow-hidden border border-gray-100 group"
               >
-                <div className="p-4 md:p-6">
-                  {/* Category Badge */}
-                  <div className="mb-3">
-                    <span className={`inline-block text-xs font-semibold px-3 py-1 rounded-full ${getCategoryColor(concept.category)}`}>
+                <div className="p-3 md:p-6">
+                  {/* Title and Category Badge */}
+                  <div className="flex items-center justify-between mb-2 md:mb-3">
+                    <h3 className="text-sm md:text-xl font-bold text-primary group-hover:text-secondary transition-colors duration-200 flex-1">
+                      {concept.title}
+                    </h3>
+                    <span className={`inline-block text-xs font-semibold px-2 py-1 md:px-3 rounded-full ml-2 ${getCategoryColor(concept.category)}`}>
                       {concept.category}
                     </span>
                   </div>
                   
-                  {/* Title */}
-                  <h3 className="text-lg md:text-xl font-bold text-primary mb-3 group-hover:text-secondary transition-colors duration-200">
-                    {concept.title}
-                  </h3>
-                  
                   {/* Teaser */}
-                  <p className="text-gray-600 mb-4 text-sm leading-relaxed">
+                  <p className="text-gray-600 mb-3 md:mb-4 text-xs md:text-sm leading-relaxed">
                     {concept.teaser}
                   </p>
                   
                   {/* Learn More Button */}
-                  <div className="flex items-center text-secondary font-medium text-sm group-hover:text-hover transition-colors duration-200">
+                  <div className="flex items-center text-secondary font-medium text-xs md:text-sm group-hover:text-hover transition-colors duration-200">
                     <span>Learn More</span>
-                    <svg className="ml-2 w-4 h-4 transform group-hover:translate-x-1 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <svg className="ml-1 md:ml-2 w-3 h-3 md:w-4 md:h-4 transform group-hover:translate-x-1 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
                     </svg>
                   </div>
