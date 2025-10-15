@@ -1,6 +1,7 @@
 import React, { useState, memo } from 'react';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
+import { Helmet } from 'react-helmet-async';
 
 interface Concept {
   id: number;
@@ -253,7 +254,7 @@ const MyLab: React.FC = memo(() => {
   };
 
   // Filter concepts based on search term
-  const filteredConcepts = concepts.filter(concept => 
+  const filteredConcepts = concepts.filter(concept =>
     concept.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
     concept.teaser.toLowerCase().includes(searchTerm.toLowerCase()) ||
     concept.description.toLowerCase().includes(searchTerm.toLowerCase()) ||
@@ -276,170 +277,179 @@ const MyLab: React.FC = memo(() => {
   };
 
   return (
-    <div className="min-h-screen bg-background">
-      <Navbar />
-      
-      {/* Hero Section */}
-      <section className="bg-white py-3">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-4">
-            <p className="text-sm md:text-lg text-gray-600 max-w-2xl mx-auto leading-relaxed font-light">
-              My Lab is a space for ideas that make me pause, think, or smile from neural networks to the nature of time. Simple words, deep thoughts, and endless curiosity.
-            </p>
-          </div>
-        </div>
-      </section>
+    <>
+      <Helmet>
+        <title>My Lab | Deon</title>
+        <meta
+          name="description"
+          content="Welcome to my portfolio — I’m Deon, a full-stack developer and UI/UX designer creating modern, performant web experiences." />
+        <link rel="canonical" href="https://deon-7anr.vercel.app/" />
+      </Helmet>
+      <div className="min-h-screen bg-background">
+        <Navbar />
 
-      {/* Floating Search Bar */}
-      <div className="sticky top-16 z-40 bg-white/95 backdrop-blur-sm border-b border-gray-200 py-4">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="relative">
-            <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-              <svg className="h-5 w-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
-              </svg>
+        {/* Hero Section */}
+        <section className="bg-white py-3">
+          <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="text-center mb-4">
+              <p className="text-sm md:text-lg text-gray-600 max-w-2xl mx-auto leading-relaxed font-light">
+                My Lab is a space for ideas that make me pause, think, or smile from neural networks to the nature of time. Simple words, deep thoughts, and endless curiosity.
+              </p>
             </div>
-            <input
-              type="text"
-              placeholder="Search concepts, categories, or ideas..."
-              value={searchTerm}
-              onChange={(e) => setSearchTerm(e.target.value)}
-              className="block w-full pl-10 pr-3 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-secondary focus:border-transparent bg-white/80 backdrop-blur-sm text-sm"
-            />
-            {searchTerm && (
-              <button
-                onClick={() => setSearchTerm('')}
-                className="absolute inset-y-0 right-0 pr-3 flex items-center text-gray-400 hover:text-gray-600"
-              >
-                <svg className="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-                </svg>
-              </button>
-            )}
           </div>
-          {searchTerm && (
-            <div className="mt-2 text-sm text-gray-600">
-              {filteredConcepts.length} concept{filteredConcepts.length !== 1 ? 's' : ''} found
-            </div>
-          )}
-        </div>
-      </div>
+        </section>
 
-      {/* Concepts Grid */}
-      <section className="bg-background py-8 md:py-12">
-        <div className="max-w-6xl mx-auto px-3 sm:px-6 lg:px-8">
-          {filteredConcepts.length === 0 ? (
-            <div className="col-span-full text-center py-12">
-              <div className="text-gray-400 mb-4">
-                <svg className="w-16 h-16 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+        {/* Floating Search Bar */}
+        <div className="sticky top-16 z-40 bg-white/95 backdrop-blur-sm border-b border-gray-200 py-4">
+          <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="relative">
+              <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                <svg className="h-5 w-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
                 </svg>
               </div>
-              <h3 className="text-lg font-medium text-gray-600 mb-2">No concepts found</h3>
-              <p className="text-gray-500 mb-4">Try searching for different terms or browse all concepts</p>
-              <button
-                onClick={() => setSearchTerm('')}
-                className="text-secondary hover:text-hover font-medium"
-              >
-                Clear search
-              </button>
-            </div>
-          ) : (
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-1 md:gap-6">
-              {filteredConcepts.map((concept) => (
-              <div
-                key={concept.id}
-                onClick={() => openModal(concept)}
-                className="bg-white rounded-xl shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1 cursor-pointer overflow-hidden border border-gray-100 group"
-              >
-                <div className="p-3 md:p-6">
-                  {/* Title and Category Badge */}
-                  <div className="flex items-center justify-between mb-2 md:mb-3">
-                    <h3 className="text-sm md:text-xl font-bold text-primary group-hover:text-secondary transition-colors duration-200 flex-1">
-                      {concept.title}
-                    </h3>
-                    <span className={`inline-block text-xs font-semibold px-2 py-1 md:px-3 rounded-full ml-2 ${getCategoryColor(concept.category)}`}>
-                      {concept.category}
-                    </span>
-                  </div>
-                  
-                  {/* Teaser */}
-                  <p className="text-gray-600 mb-3 md:mb-4 text-xs md:text-sm leading-relaxed">
-                    {concept.teaser}
-                  </p>
-                  
-                  {/* Learn More Button */}
-                  <div className="flex items-center text-secondary font-medium text-xs md:text-sm group-hover:text-hover transition-colors duration-200">
-                    <span>Learn More</span>
-                    <svg className="ml-1 md:ml-2 w-3 h-3 md:w-4 md:h-4 transform group-hover:translate-x-1 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                    </svg>
-                  </div>
-                </div>
-              </div>
-              ))}
-            </div>
-          )}
-        </div>
-      </section>
-
-      {/* Modal */}
-      {isModalOpen && selectedConcept && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
-          {/* Backdrop */}
-          <div 
-            className="fixed inset-0 bg-black bg-opacity-50 transition-opacity duration-300"
-            onClick={closeModal}
-          ></div>
-          
-          {/* Modal Content */}
-          <div className="relative bg-white rounded-xl shadow-2xl max-w-2xl w-full max-h-[90vh] overflow-y-auto transform transition-all duration-300 scale-100">
-            <div className="p-6">
-              {/* Header */}
-              <div className="flex items-start justify-between mb-6">
-                <div className="flex-1">
-                  <div className="mb-3">
-                    <span className={`inline-block text-xs font-semibold px-3 py-1 rounded-full ${getCategoryColor(selectedConcept.category)}`}>
-                      {selectedConcept.category}
-                    </span>
-                  </div>
-                  <h2 className="text-2xl font-bold text-primary mb-3">
-                    {selectedConcept.title}
-                  </h2>
-                </div>
+              <input
+                type="text"
+                placeholder="Search concepts, categories, or ideas..."
+                value={searchTerm}
+                onChange={(e) => setSearchTerm(e.target.value)}
+                className="block w-full pl-10 pr-3 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-secondary focus:border-transparent bg-white/80 backdrop-blur-sm text-sm"
+              />
+              {searchTerm && (
                 <button
-                  onClick={closeModal}
-                  className="ml-4 text-gray-400 hover:text-gray-600 transition-colors duration-200 p-1"
+                  onClick={() => setSearchTerm('')}
+                  className="absolute inset-y-0 right-0 pr-3 flex items-center text-gray-400 hover:text-gray-600"
                 >
-                  <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <svg className="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
                   </svg>
                 </button>
+              )}
+            </div>
+            {searchTerm && (
+              <div className="mt-2 text-sm text-gray-600">
+                {filteredConcepts.length} concept{filteredConcepts.length !== 1 ? 's' : ''} found
               </div>
-              
-              {/* Content */}
-              <div className="prose prose-gray max-w-none">
-                <p className="text-gray-700 leading-relaxed text-base">
-                  {selectedConcept.description}
-                </p>
-              </div>
-              
-              {/* Footer */}
-              <div className="mt-8 pt-6 border-t border-gray-200">
+            )}
+          </div>
+        </div>
+
+        {/* Concepts Grid */}
+        <section className="bg-background py-8 md:py-12">
+          <div className="max-w-6xl mx-auto px-3 sm:px-6 lg:px-8">
+            {filteredConcepts.length === 0 ? (
+              <div className="col-span-full text-center py-12">
+                <div className="text-gray-400 mb-4">
+                  <svg className="w-16 h-16 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                  </svg>
+                </div>
+                <h3 className="text-lg font-medium text-gray-600 mb-2">No concepts found</h3>
+                <p className="text-gray-500 mb-4">Try searching for different terms or browse all concepts</p>
                 <button
-                  onClick={closeModal}
-                  className="w-full bg-secondary hover:bg-hover text-white font-semibold py-3 px-6 rounded-lg transition-colors duration-200"
+                  onClick={() => setSearchTerm('')}
+                  className="text-secondary hover:text-hover font-medium"
                 >
-                  Close
+                  Clear search
                 </button>
+              </div>
+            ) : (
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-1 md:gap-6">
+                {filteredConcepts.map((concept) => (
+                  <div
+                    key={concept.id}
+                    onClick={() => openModal(concept)}
+                    className="bg-white rounded-xl shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1 cursor-pointer overflow-hidden border border-gray-100 group"
+                  >
+                    <div className="p-3 md:p-6">
+                      {/* Title and Category Badge */}
+                      <div className="flex items-center justify-between mb-2 md:mb-3">
+                        <h3 className="text-sm md:text-xl font-bold text-primary group-hover:text-secondary transition-colors duration-200 flex-1">
+                          {concept.title}
+                        </h3>
+                        <span className={`inline-block text-xs font-semibold px-2 py-1 md:px-3 rounded-full ml-2 ${getCategoryColor(concept.category)}`}>
+                          {concept.category}
+                        </span>
+                      </div>
+
+                      {/* Teaser */}
+                      <p className="text-gray-600 mb-3 md:mb-4 text-xs md:text-sm leading-relaxed">
+                        {concept.teaser}
+                      </p>
+
+                      {/* Learn More Button */}
+                      <div className="flex items-center text-secondary font-medium text-xs md:text-sm group-hover:text-hover transition-colors duration-200">
+                        <span>Learn More</span>
+                        <svg className="ml-1 md:ml-2 w-3 h-3 md:w-4 md:h-4 transform group-hover:translate-x-1 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                        </svg>
+                      </div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            )}
+          </div>
+        </section>
+
+        {/* Modal */}
+        {isModalOpen && selectedConcept && (
+          <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
+            {/* Backdrop */}
+            <div
+              className="fixed inset-0 bg-black bg-opacity-50 transition-opacity duration-300"
+              onClick={closeModal}
+            ></div>
+
+            {/* Modal Content */}
+            <div className="relative bg-white rounded-xl shadow-2xl max-w-2xl w-full max-h-[90vh] overflow-y-auto transform transition-all duration-300 scale-100">
+              <div className="p-6">
+                {/* Header */}
+                <div className="flex items-start justify-between mb-6">
+                  <div className="flex-1">
+                    <div className="mb-3">
+                      <span className={`inline-block text-xs font-semibold px-3 py-1 rounded-full ${getCategoryColor(selectedConcept.category)}`}>
+                        {selectedConcept.category}
+                      </span>
+                    </div>
+                    <h2 className="text-2xl font-bold text-primary mb-3">
+                      {selectedConcept.title}
+                    </h2>
+                  </div>
+                  <button
+                    onClick={closeModal}
+                    className="ml-4 text-gray-400 hover:text-gray-600 transition-colors duration-200 p-1"
+                  >
+                    <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                    </svg>
+                  </button>
+                </div>
+
+                {/* Content */}
+                <div className="prose prose-gray max-w-none">
+                  <p className="text-gray-700 leading-relaxed text-base">
+                    {selectedConcept.description}
+                  </p>
+                </div>
+
+                {/* Footer */}
+                <div className="mt-8 pt-6 border-t border-gray-200">
+                  <button
+                    onClick={closeModal}
+                    className="w-full bg-secondary hover:bg-hover text-white font-semibold py-3 px-6 rounded-lg transition-colors duration-200"
+                  >
+                    Close
+                  </button>
+                </div>
               </div>
             </div>
           </div>
-        </div>
-      )}
+        )}
 
-      <Footer />
-    </div>
+        <Footer />
+      </div>
+    </>
   );
 });
 
