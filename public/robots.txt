@@ -1,14 +1,14 @@
 User-agent: *
 Allow: /
 
-# Prevent bots from indexing build or config files
+# Prevent bots from indexing internal or build-related files
 Disallow: /node_modules/
 Disallow: /src/
 Disallow: /assets/
 Disallow: /api/
 
-# Sitemap location
-# Sitemap: https://deon-7anr.vercel.app/sitemap.xml
+# Sitemap location (make sure this file exists in /public)
+Sitemap: https://deonhq.xyz/sitemap.xml
 
-# Short crawl-delay to prevent excessive hits (optional)
+# Optional: control crawl rate (helps avoid server overload)
 Crawl-delay: 5
