@@ -1,4 +1,11 @@
 {
+  "redirects": [
+    {
+      "source": "https://www.deonhq.xyz/:path*",
+      "destination": "https://deonhq.xyz/:path*",
+      "permanent": true
+    }
+  ],
   "rewrites": [
     {
       "source": "/(.*)",
