@@ -22,18 +22,21 @@ const Home: React.FC = () => {
   return (
     <>
       <Helmet>
-        <title>Deon | Software Developer & Designer</title>
+        <title>Deon Orina Chinese - AI Engineer, Innovator & Tech Speaker</title>
         <meta
           name="description"
-          content="Welcome to my portfolio — I’m Deon, a full-stack developer and UI/UX designer creating modern, performant web experiences."
+          content="AI Engineer specializing in reinforcement learning, blockchain, and intelligent systems. Building scalable solutions at DeonHQ.xyz. Expert in Python, Rust, and modern web technologies."
         />
-        <meta name="keywords" content="Deon, software developer, UI/UX, React, portfolio" />
-        <meta property="og:title" content="Deon | Software Developer" />
-        <meta property="og:description" content="Explore Deon's projects and design work." />
-        <meta property="og:image" content="https://deon-7anr.vercel.app/preview.png" />
-        <meta property="og:url" content="https://deon-7anr.vercel.app/" />
+        <meta name="keywords" content="Deon Orina Chinese, AI Engineer, Machine Learning, Blockchain, Python, Rust, React, Data Science, Smart Contracts, DeFi, Tech Speaker, DeonHQ" />
+        <meta property="og:title" content="Deon Orina Chinese - AI Engineer, Innovator & Tech Speaker" />
+        <meta property="og:description" content="AI Engineer specializing in reinforcement learning, blockchain, and intelligent systems. Building scalable solutions at DeonHQ.xyz." />
+        <meta property="og:image" content="https://deonhq.xyz/deon.jpg" />
+        <meta property="og:url" content="https://deonhq.xyz/" />
         <meta name="twitter:card" content="summary_large_image" />
-        <link rel="canonical" href="https://deon-7anr.vercel.app/" />
+        <meta name="twitter:title" content="Deon Orina Chinese - AI Engineer, Innovator & Tech Speaker" />
+        <meta name="twitter:description" content="AI Engineer specializing in reinforcement learning, blockchain, and intelligent systems. Building scalable solutions at DeonHQ.xyz." />
+        <meta name="twitter:image" content="https://deonhq.xyz/deon.jpg" />
+        <link rel="canonical" href="https://deonhq.xyz/" />
       </Helmet>
       <div className="min-h-screen bg-background">
         <Navbar />

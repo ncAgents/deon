@@ -6,9 +6,20 @@ Disallow: /node_modules/
 Disallow: /src/
 Disallow: /assets/
 Disallow: /api/
+Disallow: /_redirects
+Disallow: /netlify.toml
+Disallow: /vercel.json
 
-# Sitemap location (make sure this file exists in /public)
+# Allow important files
+Allow: /deon.jpg
+Allow: /ardena.png
+Allow: /eats.png
+Allow: /moon.png
+Allow: /six.png
+Allow: /certs/
+
+# Sitemap location
 Sitemap: https://deonhq.xyz/sitemap.xml
 
-# Optional: control crawl rate (helps avoid server overload)
-Crawl-delay: 5
+# Crawl delay to be respectful to server resources
+Crawl-delay: 1
