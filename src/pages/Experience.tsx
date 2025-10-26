@@ -300,22 +300,22 @@ const Experience: React.FC = memo(() => {
             {filteredExperiences.map((experience, index) => (
               <div key={experience.id} className="relative">
                 <div
-                  className="bg-white rounded-xl shadow-sm border border-gray-100 hover:border-green-200 hover:shadow-md transition-all duration-300 transform hover:-translate-y-0.5 overflow-hidden relative group"
+                  className="bg-white rounded-lg shadow-sm border border-gray-100 hover:border-green-200 hover:shadow-md transition-all duration-300 transform hover:-translate-y-0.5 overflow-hidden relative group"
                 >
                   {/* Category Badge */}
-                  <div className="absolute top-4 right-4">
-                    <span className={`inline-flex items-center px-3 py-1 rounded-full text-xs font-medium ${
+                  <div className="absolute top-2 right-2">
+                    <span className={`inline-flex items-center px-2 py-0.5 rounded-full text-[10px] font-medium ${
                       experience.category === 'work' 
                         ? 'bg-green-50 text-green-700 border border-green-200' 
                         : 'bg-purple-50 text-purple-700 border border-purple-200'
                     }`}>
                       {experience.category === 'work' ? (
-                        <svg className="w-3 h-3 mr-1" fill="currentColor" viewBox="0 0 20 20">
+                        <svg className="w-2.5 h-2.5 mr-0.5" fill="currentColor" viewBox="0 0 20 20">
                           <path d="M9 2a1 1 0 000 2h2a1 1 0 100-2H9z" />
                           <path fillRule="evenodd" d="M4 5a2 2 0 012-2 3 3 0 003 3h2a3 3 0 003-3 2 2 0 012 2v11a2 2 0 01-2 2H6a2 2 0 01-2-2V5zm3 4a1 1 0 000 2h.01a1 1 0 100-2H7zm3 0a1 1 0 000 2h3a1 1 0 100-2h-3zm-3 4a1 1 0 100 2h.01a1 1 0 100-2H7zm3 0a1 1 0 100 2h3a1 1 0 100-2h-3z" clipRule="evenodd" />
                         </svg>
                       ) : (
-                        <svg className="w-3 h-3 mr-1" fill="currentColor" viewBox="0 0 20 20">
+                        <svg className="w-2.5 h-2.5 mr-0.5" fill="currentColor" viewBox="0 0 20 20">
                           <path d="M2 6a2 2 0 012-2h6a2 2 0 012 2v8a2 2 0 01-2 2H4a2 2 0 01-2-2V6zM14.553 7.106A1 1 0 0014 8v4a1 1 0 00.553.894l2 1A1 1 0 0018 13V7a1 1 0 00-1.447-.894l-2 1z" />
                         </svg>
                       )}
@@ -324,37 +324,37 @@ const Experience: React.FC = memo(() => {
                   </div>
 
                   {/* Subtle accent line */}
-                  <div className={`absolute left-0 top-0 bottom-0 w-1 ${
+                  <div className={`absolute left-0 top-0 bottom-0 w-0.5 ${
                     experience.category === 'work' 
                       ? 'bg-gradient-to-b from-green-400 to-green-300' 
                       : 'bg-gradient-to-b from-purple-400 to-purple-300'
                   }`}></div>
 
-                  <div className="p-6 pl-8">
-                    <div className="flex items-start mb-3">
-                      <div className={`mr-3 mt-1 flex-shrink-0 w-10 h-10 rounded-full flex items-center justify-center ${
+                  <div className="p-3 pl-5">
+                    <div className="flex items-start">
+                      <div className={`mr-2 flex-shrink-0 w-7 h-7 rounded-full flex items-center justify-center ${
                         experience.category === 'work' 
                           ? 'bg-green-50' 
                           : 'bg-purple-50'
                       }`}>
                         {experience.category === 'work' ? (
-                          <svg className={`w-5 h-5 ${experience.category === 'work' ? 'text-green-600' : 'text-purple-600'}`} fill="currentColor" viewBox="0 0 20 20">
+                          <svg className={`w-3.5 h-3.5 ${experience.category === 'work' ? 'text-green-600' : 'text-purple-600'}`} fill="currentColor" viewBox="0 0 20 20">
                             <path fillRule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clipRule="evenodd" />
                           </svg>
                         ) : (
-                          <svg className="w-5 h-5 text-purple-600" fill="currentColor" viewBox="0 0 20 20">
+                          <svg className="w-3.5 h-3.5 text-purple-600" fill="currentColor" viewBox="0 0 20 20">
                             <path fillRule="evenodd" d="M7 4a3 3 0 016 0v4a3 3 0 11-6 0V4zm4 10.93A7.001 7.001 0 0017 8a1 1 0 10-2 0A5 5 0 015 8a1 1 0 00-2 0 7.001 7.001 0 006 6.93V17H6a1 1 0 100 2h8a1 1 0 100-2h-3v-2.07z" clipRule="evenodd" />
                           </svg>
                         )}
                       </div>
                       <div className="flex-1">
-                        <h3 className="text-lg font-medium mb-1.5" style={{ color: '#1C1C1C', fontFamily: "'Inter', 'Poppins', sans-serif" }}>
+                        <h3 className="text-sm font-medium mb-0.5 leading-tight" style={{ color: '#1C1C1C', fontFamily: "'Inter', 'Poppins', sans-serif" }}>
                           {experience.role}
                         </h3>
-                        <p className="text-xs mb-2 font-medium" style={{ color: '#00C853', fontFamily: "'Inter', 'Poppins', sans-serif" }}>
+                        <p className="text-[10px] mb-1 font-medium leading-tight" style={{ color: '#00C853', fontFamily: "'Inter', 'Poppins', sans-serif" }}>
                           {experience.date}
                         </p>
-                        <p className="leading-relaxed text-gray-600" style={{ fontFamily: "'Inter', 'Poppins', sans-serif" }}>
+                        <p className="text-xs leading-relaxed text-gray-600" style={{ fontFamily: "'Inter', 'Poppins', sans-serif" }}>
                           {experience.description}
                         </p>
                       </div>
@@ -362,8 +362,8 @@ const Experience: React.FC = memo(() => {
                   </div>
                 </div>
                 {index < filteredExperiences.length - 1 && (
-                  <div className="flex justify-center my-4">
-                    <div className="w-0.5 h-6 bg-gradient-to-b from-green-300 via-green-200 to-transparent"></div>
+                  <div className="flex justify-center my-2">
+                    <div className="w-0.5 h-4 bg-gradient-to-b from-green-300 via-green-200 to-transparent"></div>
                   </div>
                 )}
               </div>
