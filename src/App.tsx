@@ -10,6 +10,7 @@ const Playground = React.lazy(() => import('./pages/Playground'));
 const MyLab = React.lazy(() => import('./pages/MyLab'));
 const NotFound = React.lazy(() => import('./pages/NotFound'));
 const PrivateRepo = React.lazy(() => import('./pages/PrivateRepo'));
+const BlogComingSoon = React.lazy(() => import('./pages/BlogComingSoon'));
 
 // Loading component
 const LoadingSpinner: React.FC = () => (
@@ -33,6 +34,7 @@ const App: React.FC = () => {
           <Route path="/playground" element={<Playground />} />
           <Route path="/my-lab" element={<MyLab />} />
           <Route path="/coming-soon" element={<NotFound />} />
+          <Route path="/blog-coming-soon" element={<BlogComingSoon />} />
           <Route path="/private-repo" element={<PrivateRepo />} />
           <Route path="*" element={<NotFound />} />
         </Routes>

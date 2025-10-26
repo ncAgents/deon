@@ -48,6 +48,7 @@ const AllProjects: React.FC = memo(() => {
       image: '/ardena.png',
       githubLink: '/private-repo',
       demoLink: 'https://ardena.xyz',
+      blogLink: 'https://medium.com/@deon./ardena-native-home-of-ai-agents-9842ebd13540',
       technologies: ['AI/ML', 'Python', 'React', 'FastAPI'],
       category: 'AI/ML',
       featured: true
@@ -59,6 +60,7 @@ const AllProjects: React.FC = memo(() => {
       image: '/eats.png',
       githubLink: '/private-repo',
       demoLink: 'https://app.egereats.software/',
+      blogLink: '/blog-coming-soon',
       technologies: ['React', 'Node.js', 'MongoDB', 'Stripe'],
       category: 'Web Development',
       featured: true
@@ -70,6 +72,7 @@ const AllProjects: React.FC = memo(() => {
       image: 'https://images.unsplash.com/photo-1639762681485-074b7f938ba0?w=400&h=250&fit=crop&crop=center',
       githubLink: 'https://github.com/NBW-Hackathon/DeonStellar',
       demoLink: '/coming-soon',
+      blogLink: '/blog-coming-soon',
       technologies: ['Stellar', 'Soroban', 'Smart Contracts', 'Rust', 'Blockchain'],
       category: 'Blockchain',
       featured: true
@@ -81,6 +84,7 @@ const AllProjects: React.FC = memo(() => {
       image: '/moon.png',
       githubLink: 'https://github.com/Deon62/Lunar-Moon-landing-Agent',
       demoLink: '/coming-soon',
+      blogLink: '/blog-coming-soon',
       technologies: ['Python', 'PyTorch', 'OpenAI Gym', 'Reinforcement Learning'],
       category: 'AI/ML',
       featured: false
@@ -92,6 +96,7 @@ const AllProjects: React.FC = memo(() => {
       image: '/six.png',
       githubLink: 'https://github.com/Deon62/AI-6-Degrees-of-separation-movie_actors',
       demoLink: '/coming-soon',
+      blogLink: '/blog-coming-soon',
       technologies: ['Gymnasium', 'Swig', 'PyTorch', 'GNNs'],
       category: 'AI/ML',
       featured: false
@@ -298,9 +303,10 @@ const AllProjects: React.FC = memo(() => {
                       <div className="h-6 bg-gray-200 rounded-full w-16"></div>
                       <div className="h-6 bg-gray-200 rounded-full w-20"></div>
                     </div>
-                    <div className="flex space-x-3">
-                      <div className="h-8 bg-gray-200 rounded w-20"></div>
-                      <div className="h-8 bg-gray-200 rounded w-16"></div>
+                    <div className="flex space-x-2">
+                      <div className="h-7 bg-gray-200 rounded w-16"></div>
+                      <div className="h-7 bg-gray-200 rounded w-14"></div>
+                      <div className="h-7 bg-gray-200 rounded w-14"></div>
                     </div>
                   </div>
                 </div>
@@ -360,12 +366,12 @@ const AllProjects: React.FC = memo(() => {
                     </div>
 
                     {/* Action Buttons */}
-                    <div className="flex gap-2">
+                    <div className="flex gap-1.5">
                       <a
                         href={project.githubLink}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="flex-1 bg-primary text-white text-center py-2 px-3 rounded-lg hover:bg-gray-800 transition-colors duration-200 text-xs font-medium"
+                        className="flex-1 bg-primary text-white text-center py-1.5 px-2 rounded-lg hover:bg-gray-800 transition-colors duration-200 text-xs font-medium"
                       >
                         GitHub
                       </a>
@@ -373,9 +379,20 @@ const AllProjects: React.FC = memo(() => {
                         href={project.demoLink}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="flex-1 bg-secondary text-white text-center py-2 px-3 rounded-lg hover:bg-hover transition-colors duration-200 text-xs font-medium"
+                        className="flex-1 bg-secondary text-white text-center py-1.5 px-2 rounded-lg hover:bg-hover transition-colors duration-200 text-xs font-medium"
                       >
-                        Live Demo
+                        Demo
+                      </a>
+                      <a
+                        href={project.blogLink}
+                        target={project.blogLink.startsWith('/') ? '_self' : '_blank'}
+                        rel="noopener noreferrer"
+                        className="flex-1 text-white text-center py-1.5 px-2 rounded-lg transition-colors duration-200 text-xs font-medium"
+                        style={{ backgroundColor: '#C6FF00', color: '#000000' }}
+                        onMouseEnter={(e) => e.currentTarget.style.backgroundColor = '#B8E600'}
+                        onMouseLeave={(e) => e.currentTarget.style.backgroundColor = '#C6FF00'}
+                      >
+                        Blog
                       </a>
                     </div>
                   </div>
