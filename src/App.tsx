@@ -5,6 +5,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 const Home = React.lazy(() => import('./pages/Home'));
 const AllProjects = React.lazy(() => import('./pages/AllProjects'));
 const Credentials = React.lazy(() => import('./pages/Credentials'));
+const Experience = React.lazy(() => import('./pages/Experience'));
 const Skills = React.lazy(() => import('./pages/Skills'));
 const Playground = React.lazy(() => import('./pages/Playground'));
 const MyLab = React.lazy(() => import('./pages/MyLab'));
@@ -30,6 +31,7 @@ const App: React.FC = () => {
           <Route path="/" element={<Home />} />
           <Route path="/projects" element={<AllProjects />} />
           <Route path="/credentials" element={<Credentials />} />
+          <Route path="/experience" element={<Experience />} />
           <Route path="/skills" element={<Skills />} />
           <Route path="/playground" element={<Playground />} />
           <Route path="/my-lab" element={<MyLab />} />
