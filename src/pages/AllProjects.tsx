@@ -12,6 +12,7 @@ const AllProjects: React.FC = memo(() => {
     const imageUrls = [
       '/ardena.png',
       '/eats.png',
+      '/deeprag.jpg',
       '/moon.png',
       '/six.png',
       'https://images.unsplash.com/photo-1639762681485-074b7f938ba0?w=400&h=250&fit=crop&crop=center'
@@ -41,6 +42,18 @@ const AllProjects: React.FC = memo(() => {
   };
 
   const allProjects = [
+    {
+      id: 0,
+      title: 'PDF Chatbot (RAG AI)',
+      description: 'An intelligent PDF chatbot that uses Retrieval-Augmented Generation (RAG) to read, understand, and answer questions from long PDF documents — even 300+ pages. It supports multiple uploads, streaming responses, and document-specific chat memory.',
+      image: '/deeprag.jpg',
+      githubLink: 'https://github.com/Deon62/pdfchat',
+      demoLink: 'https://youtu.be/uJ6D8hBHudc',
+      blogLink: '/coming-soon',
+      technologies: ['Python', 'Flask', 'LangChain', 'ChromaDB', 'DeepSeek', 'Mistral Embeddings', 'RAG'],
+      category: 'Featured Projects',
+      featured: true
+    },
     {
       id: 1,
       title: 'Ardena',
