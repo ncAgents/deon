@@ -44,14 +44,14 @@ const AllProjects: React.FC = memo(() => {
   const allProjects = [
     {
       id: 0,
-      title: 'PDF Chatbot (RAG AI)',
-      description: 'An intelligent PDF chatbot that uses Retrieval-Augmented Generation (RAG) to read, understand, and answer questions from long PDF documents — even 300+ pages. It supports multiple uploads, streaming responses, and document-specific chat memory.',
+      title: 'Deeprag (RAG AI)',
+      description: 'An intelligent PDF chatbot that uses Retrieval-Augmented Generation (RAG) to read, understand, and answer questions from long PDF documents  even 1000+ pages. It supports multiple uploads, streaming responses, and document-specific chat memory.',
       image: '/deeprag.jpg',
       githubLink: 'https://github.com/Deon62/pdfchat',
       demoLink: 'https://youtu.be/uJ6D8hBHudc',
       blogLink: '/coming-soon',
       technologies: ['Python', 'Flask', 'LangChain', 'ChromaDB', 'DeepSeek', 'Mistral Embeddings', 'RAG'],
-      category: 'Featured Projects',
+      category: 'AI/ML',
       featured: true
     },
     {
