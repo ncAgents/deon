@@ -7,7 +7,7 @@
   <!-- Homepage -->
   <url>
     <loc>https://deonhq.xyz/</loc>
-    <lastmod>2024-01-15</lastmod>
+    <lastmod>2025-11-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
@@ -15,7 +15,7 @@
   <!-- Projects Page -->
   <url>
     <loc>https://deonhq.xyz/projects</loc>
-    <lastmod>2024-01-15</lastmod>
+    <lastmod>2025-11-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -23,15 +23,23 @@
   <!-- Credentials Page -->
   <url>
     <loc>https://deonhq.xyz/credentials</loc>
-    <lastmod>2024-01-15</lastmod>
+    <lastmod>2025-11-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+  </url>
+  
+  <!-- Experience Page -->
+  <url>
+    <loc>https://deonhq.xyz/experience</loc>
+    <lastmod>2025-11-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
   </url>
   
   <!-- Skills Page -->
   <url>
     <loc>https://deonhq.xyz/skills</loc>
-    <lastmod>2024-01-15</lastmod>
+    <lastmod>2025-11-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -39,7 +47,7 @@
   <!-- Playground Page -->
   <url>
     <loc>https://deonhq.xyz/playground</loc>
-    <lastmod>2024-01-15</lastmod>
+    <lastmod>2025-11-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -47,7 +55,7 @@
   <!-- My Lab Page -->
   <url>
     <loc>https://deonhq.xyz/my-lab</loc>
-    <lastmod>2024-01-15</lastmod>
+    <lastmod>2025-11-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>

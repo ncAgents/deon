@@ -72,12 +72,23 @@ const Credentials: React.FC = () => {
   return (
     <>
       <Helmet>
-        <title>Deon | Credentials</title>
+        <title>Credentials | Deon Orina Chinese</title>
         <meta
           name="description"
-          content="Welcome to my portfolio — I’m Deon, a full-stack developer and UI/UX designer creating modern, performant web experiences."
+          content="Deon's certifications, credentials, and educational achievements in AI, machine learning, and blockchain technologies."
         />
-        <link rel="canonical" href="https://deon-7anr.vercel.app/" />
+        <meta name="keywords" content="Deon Orina Chinese, Credentials, Certifications, Education, AI Certifications, Blockchain Certifications" />
+        <link rel="canonical" href="https://deonhq.xyz/credentials" />
+        <meta property="og:title" content="Credentials | Deon Orina Chinese" />
+        <meta property="og:description" content="Deon's certifications, credentials, and educational achievements in AI, machine learning, and blockchain." />
+        <meta property="og:url" content="https://deonhq.xyz/credentials" />
+        <meta property="og:type" content="website" />
+        <meta property="og:image" content="https://deonhq.xyz/deon.jpg" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Credentials | Deon Orina Chinese" />
+        <meta name="twitter:description" content="Deon's certifications, credentials, and educational achievements." />
+        <meta name="twitter:image" content="https://deonhq.xyz/deon.jpg" />
+        <meta name="robots" content="index, follow" />
       </Helmet>
       <div className="min-h-screen bg-background">
         {/* Header */}

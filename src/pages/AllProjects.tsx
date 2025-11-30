@@ -125,9 +125,20 @@ const AllProjects: React.FC = memo(() => {
   return (
     <>
       <Helmet>
-        <title>Deon | All Projects</title>
-        <meta name="description" content="Explore Deon's projects and design work." />
-        <link rel="canonical" href="https://deon-7anr.vercel.app/" />
+        <title>Projects | Deon Orina Chinese</title>
+        <meta name="description" content="Explore Deon's portfolio of AI, blockchain, and web development projects. From machine learning applications to decentralized systems." />
+        <meta name="keywords" content="Deon Orina Chinese, Projects, Portfolio, AI Projects, Blockchain Projects, Web Development" />
+        <link rel="canonical" href="https://deonhq.xyz/projects" />
+        <meta property="og:title" content="Projects | Deon Orina Chinese" />
+        <meta property="og:description" content="Explore Deon's portfolio of AI, blockchain, and web development projects." />
+        <meta property="og:url" content="https://deonhq.xyz/projects" />
+        <meta property="og:type" content="website" />
+        <meta property="og:image" content="https://deonhq.xyz/deon.jpg" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Projects | Deon Orina Chinese" />
+        <meta name="twitter:description" content="Explore Deon's portfolio of AI, blockchain, and web development projects." />
+        <meta name="twitter:image" content="https://deonhq.xyz/deon.jpg" />
+        <meta name="robots" content="index, follow" />
       </Helmet>
       <div className="min-h-screen bg-background">
         {/* Header */}

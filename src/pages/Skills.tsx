@@ -129,9 +129,20 @@ const Skills: React.FC = () => {
   return (
     <>
       <Helmet>
-        <title>Skills</title>
-        <meta name="description" content="Explore Deon's skills and expertise." />
-        <link rel="canonical" href="https://deon-7anr.vercel.app/" />
+        <title>Skills | Deon Orina Chinese</title>
+        <meta name="description" content="Deon's technical skills and expertise in AI, machine learning, blockchain, data science, and web development technologies." />
+        <meta name="keywords" content="Deon Orina Chinese, Skills, AI Engineer, Machine Learning, Blockchain, Python, Rust, Data Science" />
+        <link rel="canonical" href="https://deonhq.xyz/skills" />
+        <meta property="og:title" content="Skills | Deon Orina Chinese" />
+        <meta property="og:description" content="Deon's technical skills and expertise in AI, machine learning, blockchain, and web development." />
+        <meta property="og:url" content="https://deonhq.xyz/skills" />
+        <meta property="og:type" content="website" />
+        <meta property="og:image" content="https://deonhq.xyz/deon.jpg" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Skills | Deon Orina Chinese" />
+        <meta name="twitter:description" content="Deon's technical skills and expertise in AI, machine learning, blockchain, and web development." />
+        <meta name="twitter:image" content="https://deonhq.xyz/deon.jpg" />
+        <meta name="robots" content="index, follow" />
       </Helmet>
       <div className="min-h-screen bg-background">
         {/* Header */}

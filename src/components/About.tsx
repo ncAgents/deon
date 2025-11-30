@@ -58,6 +58,8 @@ const About: React.FC = () => {
     { name: 'Python', level: 'Expert' },
     { name: 'Rust', level: 'Advanced' },
     { name: 'R', level: 'Advanced' },
+    { name: 'TypeScript', level: 'Advanced' },
+    { name: 'JavaScript', level: 'Advanced' },
     { name: 'React', level: 'Intermediate' }
   ];
 
@@ -122,20 +124,32 @@ const About: React.FC = () => {
         </div>
 
         {/* Languages Section */}
-        <div className="bg-gradient-to-r from-background to-gray-50 rounded-2xl p-8">
-          <h3 className="text-2xl font-bold text-primary text-center mb-8">
+        <div className="bg-white rounded-3xl p-10 md:p-12">
+          <h3 className="text-xl font-light text-primary text-center mb-12 tracking-wide">
             Programming Languages
           </h3>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-            {languages.map((lang, index) => (
-              <div
-                key={index}
-                className="bg-white rounded-xl p-6 text-center shadow-md hover:shadow-lg transition-shadow duration-200"
-              >
-                <div className="text-2xl font-bold text-secondary mb-2">{lang.name}</div>
-                <div className="text-sm text-gray-500 font-medium">{lang.level}</div>
-              </div>
-            ))}
+          
+          {/* Vertical Timeline */}
+          <div className="relative max-w-md mx-auto">
+            {/* Timeline line */}
+            <div className="absolute left-6 top-0 bottom-0 w-0.5 bg-gray-200"></div>
+            
+            {/* Languages */}
+            <div className="space-y-6">
+              {languages.map((lang, index) => (
+                <div key={index} className="relative flex items-center pl-12">
+                  {/* Timeline dot */}
+                  <div className="absolute left-4 w-3 h-3 bg-gray-300 rounded-full border-2 border-white"></div>
+                  
+                  {/* Language name */}
+                  <div className="px-4 py-2 bg-gray-50 rounded-full border border-gray-200/60">
+                    <span className="text-sm font-normal text-gray-600">
+                      {lang.name}
+                    </span>
+                  </div>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </div>
