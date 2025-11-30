@@ -39,7 +39,7 @@ const Hero: React.FC = memo(() => {
         <div className="mb-8 flex justify-center">
           <img
             src="/deon.jpg"
-            alt="Deon Chinese"
+            alt="Deon Orina - Also known as Deon Gideon, Deon Chinese, Deon Orina Nyabwengi"
             loading="lazy"
             className="w-32 h-32 md:w-40 md:h-40 rounded-full object-cover border-4 border-secondary shadow-lg"
           />

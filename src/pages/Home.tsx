@@ -25,9 +25,9 @@ const Home: React.FC = () => {
         <title>Deon Orina Chinese - AI Engineer, Innovator & Tech Speaker</title>
         <meta
           name="description"
-          content="AI Engineer specializing in reinforcement learning, blockchain, and intelligent systems. Building scalable solutions at DeonHQ.xyz. Expert in Python, Rust, and modern web technologies."
+          content="Deon Orina (Deon Gideon, Deon Chinese, Deon Orina Nyabwengi, Dion Orina) - AI Engineer specializing in reinforcement learning, blockchain, and intelligent systems. Building scalable solutions at DeonHQ.xyz. Expert in Python, Rust, and modern web technologies."
         />
-        <meta name="keywords" content="Deon Orina Chinese, AI Engineer, Machine Learning, Blockchain, Python, Rust, React, Data Science, Smart Contracts, DeFi, Tech Speaker, DeonHQ" />
+        <meta name="keywords" content="Deon Orina, Dion Orina, Deon Gideon, Deon Orina Nyabwengi, Deon Chinese, Deon Orina Chinese, AI Engineer, Machine Learning, Blockchain, Python, Rust, React, Data Science, Smart Contracts, DeFi, Tech Speaker, DeonHQ" />
         <meta property="og:title" content="Deon Orina Chinese - AI Engineer, Innovator & Tech Speaker" />
         <meta property="og:description" content="AI Engineer specializing in reinforcement learning, blockchain, and intelligent systems. Building scalable solutions at DeonHQ.xyz." />
         <meta property="og:image" content="https://deonhq.xyz/deon.jpg" />
