@@ -4,11 +4,13 @@ Allow: /
 # Prevent bots from indexing internal or build-related files
 Disallow: /node_modules/
 Disallow: /src/
-Disallow: /assets/
 Disallow: /api/
 Disallow: /_redirects
 Disallow: /netlify.toml
 Disallow: /vercel.json
+
+# Allow built assets required for rendering
+Allow: /assets/
 
 # Allow important files
 Allow: /deon.jpg

@@ -67,7 +67,7 @@ const BlogComingSoon: React.FC = () => {
           </p>
           <div className="flex justify-center gap-6">
             <a
-              href="https://medium.com/@deon."
+              href="https://medium.com/@deon"
               target="_blank"
               rel="noopener noreferrer"
               className="text-secondary hover:text-hover transition-colors duration-200"

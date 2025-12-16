@@ -89,7 +89,7 @@ const Projects: React.FC = memo(() => {
       image: '/ardena.png',
       githubLink: '/private-repo',
       demoLink: 'https://ardena.xyz',
-      blogLink: 'https://medium.com/@deon./ardena-native-home-of-ai-agents-9842ebd13540',
+      blogLink: 'https://medium.com/@deon/ardena-native-home-of-ai-agents-9842ebd13540',
       technologies: ['AI/ML', 'Python', 'React', 'FastAPI'],
       category: 'AI/ML'
     },

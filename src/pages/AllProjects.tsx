@@ -61,7 +61,7 @@ const AllProjects: React.FC = memo(() => {
       image: '/ardena.png',
       githubLink: '/private-repo',
       demoLink: 'https://ardena.xyz',
-      blogLink: 'https://medium.com/@deon./ardena-native-home-of-ai-agents-9842ebd13540',
+      blogLink: 'https://medium.com/@deon/ardena-native-home-of-ai-agents-9842ebd13540',
       technologies: ['AI/ML', 'Python', 'React', 'FastAPI'],
       category: 'AI/ML',
       featured: true
@@ -125,17 +125,17 @@ const AllProjects: React.FC = memo(() => {
   return (
     <>
       <Helmet>
-        <title>Projects | Deon Orina Chinese</title>
+        <title>Projects | Deon Orina</title>
         <meta name="description" content="Explore Deon's portfolio of AI, blockchain, and web development projects. From machine learning applications to decentralized systems." />
-        <meta name="keywords" content="Deon Orina Chinese, Projects, Portfolio, AI Projects, Blockchain Projects, Web Development" />
+        <meta name="keywords" content="Deon Orina, Projects, Portfolio, AI Projects, Blockchain Projects, Web Development" />
         <link rel="canonical" href="https://deonhq.xyz/projects" />
-        <meta property="og:title" content="Projects | Deon Orina Chinese" />
+        <meta property="og:title" content="Projects | Deon Orina" />
         <meta property="og:description" content="Explore Deon's portfolio of AI, blockchain, and web development projects." />
         <meta property="og:url" content="https://deonhq.xyz/projects" />
         <meta property="og:type" content="website" />
         <meta property="og:image" content="https://deonhq.xyz/deon.jpg" />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Projects | Deon Orina Chinese" />
+        <meta name="twitter:title" content="Projects | Deon Orina" />
         <meta name="twitter:description" content="Explore Deon's portfolio of AI, blockchain, and web development projects." />
         <meta name="twitter:image" content="https://deonhq.xyz/deon.jpg" />
         <meta name="robots" content="index, follow" />

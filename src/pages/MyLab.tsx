@@ -279,19 +279,19 @@ const MyLab: React.FC = memo(() => {
   return (
     <>
       <Helmet>
-        <title>My Lab | Deon Orina Chinese</title>
+        <title>My Lab | Deon Orina</title>
         <meta
           name="description"
           content="My Lab is a space for ideas that make me pause, think, or smile from neural networks to the nature of time. Simple words, deep thoughts, and endless curiosity." />
-        <meta name="keywords" content="Deon Orina Chinese, My Lab, Ideas, Concepts, AI, Physics, Mathematics, Philosophy, Game Theory" />
+        <meta name="keywords" content="Deon Orina, My Lab, Ideas, Concepts, AI, Physics, Mathematics, Philosophy, Game Theory" />
         <link rel="canonical" href="https://deonhq.xyz/my-lab" />
-        <meta property="og:title" content="My Lab | Deon Orina Chinese" />
+        <meta property="og:title" content="My Lab | Deon Orina" />
         <meta property="og:description" content="A space for ideas that make me pause, think, or smile from neural networks to the nature of time." />
         <meta property="og:url" content="https://deonhq.xyz/my-lab" />
         <meta property="og:type" content="website" />
         <meta property="og:image" content="https://deonhq.xyz/deon.jpg" />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="My Lab | Deon Orina Chinese" />
+        <meta name="twitter:title" content="My Lab | Deon Orina" />
         <meta name="twitter:description" content="A space for ideas that make me pause, think, or smile from neural networks to the nature of time." />
         <meta name="twitter:image" content="https://deonhq.xyz/deon.jpg" />
         <meta name="robots" content="index, follow" />

@@ -6,7 +6,7 @@ import Projects from '../components/Projects';
 import Contact from '../components/Contact';
 import Footer from '../components/Footer';
 import CalendarBooking from '../components/CalendarBooking';
-import { Helmet } from 'react-helmet-async';
+import SEO from '../components/SEO';
 
 const Home: React.FC = () => {
   const [isCalendarOpen, setIsCalendarOpen] = useState(false);
@@ -21,23 +21,24 @@ const Home: React.FC = () => {
 
   return (
     <>
-      <Helmet>
-        <title>Deon Orina Chinese - AI Engineer, Innovator & Tech Speaker</title>
-        <meta
-          name="description"
-          content="Deon Orina (Deon Gideon, Deon Chinese, Deon Orina Nyabwengi, Dion Orina) - AI Engineer specializing in reinforcement learning, blockchain, and intelligent systems. Building scalable solutions at DeonHQ.xyz. Expert in Python, Rust, and modern web technologies."
-        />
-        <meta name="keywords" content="Deon Orina, Dion Orina, Deon Gideon, Deon Orina Nyabwengi, Deon Chinese, Deon Orina Chinese, AI Engineer, Machine Learning, Blockchain, Python, Rust, React, Data Science, Smart Contracts, DeFi, Tech Speaker, DeonHQ" />
-        <meta property="og:title" content="Deon Orina Chinese - AI Engineer, Innovator & Tech Speaker" />
-        <meta property="og:description" content="AI Engineer specializing in reinforcement learning, blockchain, and intelligent systems. Building scalable solutions at DeonHQ.xyz." />
-        <meta property="og:image" content="https://deonhq.xyz/deon.jpg" />
-        <meta property="og:url" content="https://deonhq.xyz/" />
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Deon Orina Chinese - AI Engineer, Innovator & Tech Speaker" />
-        <meta name="twitter:description" content="AI Engineer specializing in reinforcement learning, blockchain, and intelligent systems. Building scalable solutions at DeonHQ.xyz." />
-        <meta name="twitter:image" content="https://deonhq.xyz/deon.jpg" />
-        <link rel="canonical" href="https://deonhq.xyz/" />
-      </Helmet>
+      <SEO
+        url="https://deonhq.xyz/"
+        structuredData={{
+          "@context": "https://schema.org",
+          "@type": "Person",
+          "name": "Deon Orina",
+          "alternateName": ["chinesemusk", "ChineseMusk", "Deon Chinese", "Deon Gideon", "Dion Orina"],
+          "jobTitle": "AI Engineer",
+          "url": "https://deonhq.xyz/",
+          "image": "https://deonhq.xyz/deon.jpg",
+          "sameAs": [
+            "https://twitter.com/Deonchinese",
+            "https://www.linkedin.com/in/deon-gideon-4a1722252/",
+            "https://github.com/deon62",
+            "https://medium.com/@deon"
+          ]
+        }}
+      />
       <div className="min-h-screen bg-background">
         <Navbar />
         <Hero />

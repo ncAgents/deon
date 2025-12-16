@@ -12,15 +12,15 @@ interface SEOProps {
 }
 
 const SEO: React.FC<SEOProps> = ({
-  title = 'Deon Orina Chinese - AI Engineer, Innovator & Tech Speaker',
-  description = 'AI Engineer specializing in reinforcement learning, blockchain, and intelligent systems. Building scalable solutions at DeonHQ.xyz. Expert in Python, Rust, and modern web technologies.',
-  keywords = 'Deon Orina Chinese, AI Engineer, Machine Learning, Blockchain, Python, Rust, React, Data Science, Smart Contracts, DeFi, Tech Speaker, DeonHQ',
+  title = 'Deon Orina - AI Engineer (ML & Deep Learning)',
+  description = 'Deon Orina is an AI Engineer specializing in machine learning, deep learning, and data science. He builds production AI systems, scalable backends in Python and Rust, React Native mobile apps, and smart contracts.',
+  keywords = 'Deon Orina, AI Engineer, Machine Learning, Deep Learning, Data Science, MLOps, Python, Rust, React Native, Backend Development, Smart Contracts, Blockchain, Technical Writer, Medium',
   image = 'https://deonhq.xyz/deon.jpg',
   url = 'https://deonhq.xyz',
   type = 'website',
   structuredData
 }) => {
-  const fullTitle = title.includes('Deon Orina Chinese') ? title : `${title} | Deon Orina Chinese`;
+  const fullTitle = title.includes('Deon Orina') ? title : `${title} | Deon Orina`;
   
   return (
     <Helmet>
@@ -29,7 +29,7 @@ const SEO: React.FC<SEOProps> = ({
       <meta name="title" content={fullTitle} />
       <meta name="description" content={description} />
       <meta name="keywords" content={keywords} />
-      <meta name="author" content="Deon Orina Chinese" />
+      <meta name="author" content="Deon Orina" />
       <meta name="robots" content="index, follow" />
       <link rel="canonical" href={url} />
       
@@ -41,7 +41,7 @@ const SEO: React.FC<SEOProps> = ({
       <meta property="og:image" content={image} />
       <meta property="og:image:width" content="1200" />
       <meta property="og:image:height" content="630" />
-      <meta property="og:site_name" content="Deon Orina Chinese Portfolio" />
+      <meta property="og:site_name" content="Deon Orina" />
       <meta property="og:locale" content="en_US" />
       
       {/* Twitter */}

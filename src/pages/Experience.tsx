@@ -74,17 +74,17 @@ const Experience: React.FC = memo(() => {
   return (
     <>
       <Helmet>
-        <title>Experience | Deon Orina Chinese</title>
+        <title>Experience | Deon Orina</title>
         <meta name="description" content="Deon's professional experience, work history, and speaking engagements in AI, blockchain, and technology." />
-        <meta name="keywords" content="Deon Orina Chinese, Experience, Work History, Speaking Engagements, AI Engineer, Blockchain Developer" />
+        <meta name="keywords" content="Deon Orina, Experience, Work History, Speaking Engagements, AI Engineer, Blockchain Developer" />
         <link rel="canonical" href="https://deonhq.xyz/experience" />
-        <meta property="og:title" content="Experience | Deon Orina Chinese" />
+        <meta property="og:title" content="Experience | Deon Orina" />
         <meta property="og:description" content="Deon's professional experience, work history, and speaking engagements." />
         <meta property="og:url" content="https://deonhq.xyz/experience" />
         <meta property="og:type" content="website" />
         <meta property="og:image" content="https://deonhq.xyz/deon.jpg" />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Experience | Deon Orina Chinese" />
+        <meta name="twitter:title" content="Experience | Deon Orina" />
         <meta name="twitter:description" content="Deon's professional experience, work history, and speaking engagements." />
         <meta name="twitter:image" content="https://deonhq.xyz/deon.jpg" />
         <meta name="robots" content="index, follow" />

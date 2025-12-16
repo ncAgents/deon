@@ -189,20 +189,20 @@ const Playground: React.FC = () => {
   return (
     <>
       <Helmet>
-        <title>Playground | Deon Orina Chinese</title>
+        <title>Playground | Deon Orina</title>
         <meta
           name="description"
           content="Interactive playground to chat with Deon and learn about his work, projects, and expertise in AI, blockchain, and technology."
         />
-        <meta name="keywords" content="Deon Orina Chinese, Playground, Chat, AI Chat, Interactive" />
+        <meta name="keywords" content="Deon Orina, Playground, Chat, AI Chat, Interactive" />
         <link rel="canonical" href="https://deonhq.xyz/playground" />
-        <meta property="og:title" content="Playground | Deon Orina Chinese" />
+        <meta property="og:title" content="Playground | Deon Orina" />
         <meta property="og:description" content="Interactive playground to chat with Deon and learn about his work and expertise." />
         <meta property="og:url" content="https://deonhq.xyz/playground" />
         <meta property="og:type" content="website" />
         <meta property="og:image" content="https://deonhq.xyz/deon.jpg" />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Playground | Deon Orina Chinese" />
+        <meta name="twitter:title" content="Playground | Deon Orina" />
         <meta name="twitter:description" content="Interactive playground to chat with Deon and learn about his work." />
         <meta name="twitter:image" content="https://deonhq.xyz/deon.jpg" />
         <meta name="robots" content="index, follow" />
