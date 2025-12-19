@@ -15,7 +15,7 @@ const Hero: React.FC = memo(() => {
     // Create a temporary link to download the file
     const link = document.createElement('a');
     link.href = '/certs/resume.pdf';
-    link.download = 'Deon_Chinese_Resume.pdf';
+    link.download = 'Deon_Orina_Resume.pdf';
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
@@ -39,7 +39,7 @@ const Hero: React.FC = memo(() => {
         <div className="mb-8 flex justify-center">
           <img
             src="/deon.jpg"
-            alt="Deon Orina - Also known as Deon Gideon, Deon Chinese, Deon Orina Nyabwengi"
+            alt="Deon Orina - AI Engineer"
             loading="lazy"
             className="w-32 h-32 md:w-40 md:h-40 rounded-full object-cover border-4 border-secondary shadow-lg"
           />

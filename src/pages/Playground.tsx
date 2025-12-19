@@ -40,7 +40,7 @@ const Playground: React.FC = () => {
   }, [messages]);
 
   const portfolioKnowledge = {
-    about: "Deon Chinese is a brilliant computer science student who's basically a wizard at merging AI, reinforcement learning, and blockchain into beautiful, functional products. He's like the Tony Stark of tech - but with better UI design skills! 😄",
+    about: "Deon Orina is a brilliant computer science student who's basically a wizard at merging AI, reinforcement learning, and blockchain into beautiful, functional products. He's like the Tony Stark of tech - but with better UI design skills! 😄",
     skills: "Deon's superpowers include: Python (he speaks it fluently), Rust (because C++ wasn't hard enough), R (for when he wants to be fancy with statistics), and React (for making things look pretty). His main expertise? AI Engineering, Data Science, and Blockchain development - basically the holy trinity of modern tech!",
     projects: {
       ardena: "Ardena is Deon's AI platform that lets people create AI agents without writing a single line of code. It's like having a personal AI assistant factory! The demo is live at ardena.xyz - check it out!",

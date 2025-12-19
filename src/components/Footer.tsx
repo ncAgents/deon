@@ -80,7 +80,7 @@ const Footer: React.FC = () => {
 
           {/* Copyright */}
           <p className="text-gray-300 text-sm">
-            © 2024 Deon Chinese. All rights reserved.
+            © 2024 Deon Orina. All rights reserved.
           </p>
         </div>
       </div>

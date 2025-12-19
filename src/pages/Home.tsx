@@ -27,15 +27,91 @@ const Home: React.FC = () => {
           "@context": "https://schema.org",
           "@type": "Person",
           "name": "Deon Orina",
-          "alternateName": ["chinesemusk", "ChineseMusk", "Deon Chinese", "Deon Gideon", "Dion Orina"],
           "jobTitle": "AI Engineer",
+          "description": "Deon Orina is an AI Engineer, React Native Mobile Developer, Medium Writer, Web Developer, and Blockchain Developer. He specializes in advanced AI fields such as Reinforcement Learning and Generative AI.",
           "url": "https://deonhq.xyz/",
           "image": "https://deonhq.xyz/deon.jpg",
           "sameAs": [
             "https://twitter.com/Deonchinese",
+            "https://huggingface.co/chinesemusk/datasets",
+            "https://devpost.com/625deon",
+            "https://www.reddit.com/user/Deongideon_/",
             "https://www.linkedin.com/in/deon-gideon-4a1722252/",
             "https://github.com/deon62",
             "https://medium.com/@deon"
+          ],
+          "worksFor": [
+            {
+              "@type": "Organization",
+              "name": "DeonHQ.xyz",
+              "url": "https://deonhq.xyz/"
+            },
+            {
+              "@type": "Organization",
+              "name": "Ardena",
+              "description": "No-code AI agent platform",
+              "url": "https://ardena.ai"
+            },
+            {
+              "@type": "Organization",
+              "name": "Stellar East Africa",
+              "description": "Blockchain Developer Relations"
+            }
+          ],
+          "founder": {
+            "@type": "Organization",
+            "name": "Ardena",
+            "description": "Platform that helps people create AI agents with zero code",
+            "url": "https://ardena.ai"
+          },
+          "knowsAbout": [
+            "Artificial Intelligence",
+            "Machine Learning",
+            "Deep Learning",
+            "Neural Networks",
+            "Reinforcement Learning",
+            "Blockchain Technology",
+            "Smart Contracts",
+            "Decentralized Finance",
+            "Python Programming",
+            "Rust Programming",
+            "Data Science",
+            "Computer Vision",
+            "Natural Language Processing",
+            "Cryptocurrency",
+            "Web3 Development",
+            "Quantum Computing",
+            "No-Code AI Platforms",
+            "AI Agent Development",
+            "Stellar Blockchain",
+            "Developer Relations"
+          ],
+          "hasOccupation": [
+            {
+              "@type": "Occupation",
+              "name": "AI/ML Engineer",
+              "description": "Specializing in artificial intelligence and machine learning technologies"
+            },
+            {
+              "@type": "Occupation",
+              "name": "Blockchain Developer",
+              "description": "Stellar East Africa Blockchain Developer Relations"
+            },
+            {
+              "@type": "Occupation",
+              "name": "Founder",
+              "description": "Founder of Ardena - no-code AI agent platform"
+            }
+          ],
+          "publisher": {
+            "@type": "Organization",
+            "name": "Medium",
+            "url": "https://medium.com/@deon"
+          },
+          "award": [
+            "Devpost Contributor",
+            "Hugging Face Dataset Creator",
+            "Stellar East Africa Blockchain Developer Relations"
           ]
         }}
       />

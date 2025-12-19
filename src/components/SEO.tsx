@@ -13,8 +13,8 @@ interface SEOProps {
 
 const SEO: React.FC<SEOProps> = ({
   title = 'Deon Orina - AI Engineer (ML & Deep Learning)',
-  description = 'Deon Orina is an AI Engineer specializing in machine learning, deep learning, and data science. He builds production AI systems, scalable backends in Python and Rust, React Native mobile apps, and smart contracts.',
-  keywords = 'Deon Orina, AI Engineer, Machine Learning, Deep Learning, Data Science, MLOps, Python, Rust, React Native, Backend Development, Smart Contracts, Blockchain, Technical Writer, Medium',
+  description = 'Deon Orina is an AI Engineer, React Native Mobile Developer, Medium Writer, Web Developer, and Blockchain Developer. He specializes in advanced AI fields such as Reinforcement Learning and Generative AI, and builds scalable systems.',
+  keywords = 'Deon Orina, AI Engineer, React Native Developer, Mobile App Developer, Medium Writer, Web Developer, Blockchain Developer, Machine Learning, Deep Learning, Reinforcement Learning, Generative AI, Stellar Network, Rust, Python',
   image = 'https://deonhq.xyz/deon.jpg',
   url = 'https://deonhq.xyz',
   type = 'website',
